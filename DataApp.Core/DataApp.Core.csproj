@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstracts\AbstractController.cs" />
     <Compile Include="Abstracts\IController.cs" />
     <Compile Include="Abstracts\IUserController.cs" />
     <Compile Include="DataAppFacade.cs" />
