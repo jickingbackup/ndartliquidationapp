@@ -33,7 +33,9 @@ namespace DataApp.Core.Controlers
                 //set token
                 if (user != null)
                 {
-                    user.Token = Guid.NewGuid().ToString();
+                    if (String.IsNullOrEmpty(user.Token))
+                        user.Token = Guid.NewGuid().ToString();
+
                     this.collection.Update(user);
                 }
 
@@ -41,6 +43,31 @@ namespace DataApp.Core.Controlers
             }
             catch (Exception)
             {
+
+                throw;
+            }
+        }
+
+        public void Logout(int id)
+        {
+            try
+            {
+                User user = null;
+
+                user = collection.FindById(id);
+
+                //remove token
+                if (user != null)
+                {
+                    if (String.IsNullOrEmpty(user.Token) == false)
+                        user.Token = string.Empty;
+
+                    collection.Update(user);
+                }
+            }
+            catch (Exception)
+            {
+
 
                 throw;
             }
@@ -86,5 +113,7 @@ namespace DataApp.Core.Controlers
                 throw;
             }
         }
+
+
     }
 }

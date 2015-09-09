@@ -5,5 +5,6 @@ namespace DataApp.Core.Abstracts
     public interface IUserController:IController<User>
     {
         User Login(string username, string password);
+        void Logout(int id);
     }
 }

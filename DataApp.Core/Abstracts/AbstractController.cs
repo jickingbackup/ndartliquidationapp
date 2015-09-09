@@ -18,6 +18,7 @@ namespace DataApp.Core.Abstracts
             this.collectionName = collectionName;
             db = dbcontext;
             collection = db.GetCollection<T>(collectionName);
+            collection.EnsureIndex("Id");
         }
 
         #region IController
@@ -47,7 +48,7 @@ namespace DataApp.Core.Abstracts
         {
             try
             {
-                if(this.collection.Delete(Query.EQ("Id", (int)id)) > 0)
+                if(this.collection.Delete((int)id))
                     return true;
 
                 return false;
@@ -100,7 +101,7 @@ namespace DataApp.Core.Abstracts
         {
             try
             {
-                return collection.FindOne(Query.EQ("Id", (int)id));
+                return collection.FindById((int)id);
             }
             catch (Exception)
             {
