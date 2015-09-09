@@ -10,38 +10,74 @@ using System.Threading.Tasks;
 
 namespace DataApp.Core.Controlers
 {
-    class UserController:IUserController
+    class UserController : AbstractController<User>, IUserController
     {
-        LiteDatabase db = DbContextFactory.CreateLiteDBContext();
-
-        public User Get(object id)
+        public UserController(string collectionName, LiteDatabase dbContext)
+            :base(collectionName, dbContext)
         {
-            throw new NotImplementedException();
+
         }
 
-        public IEnumerable<User> Get()
+        public User Login(string username, string password)
         {
-            var users = db.GetCollection<User>("user");
-            return users.FindAll();
+            try
+            {
+                User user = null;
+
+                user = this.collection.FindOne(
+                    Query.And(
+                        Query.EQ("Username", username),
+                        Query.EQ("Password", password))
+                        );
+
+                return user;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
-        public int Add(User entity)
+        //for security reasons
+        public override List<User> Get()
         {
-            var users = db.GetCollection<User>("user");
-            int id = 0;
+            try
+            {
+                var users = base.Get();
 
-            Int32.TryParse(users.Insert(entity).ToString(), out id);
-            return id;
+                foreach (var item in users)
+                {
+                    item.Password = "xxx";
+                }
+
+                return users;
+            }
+            catch (Exception)
+            {
+
+
+                throw;
+            }
         }
 
-        public int Update(User entity)
+        public override User Get(object id)
         {
-            throw new NotImplementedException();
-        }
+            try
+            {
+                var user = base.Get(id);
 
-        public int Delete(User entity)
-        {
-            throw new NotImplementedException();
+                if (user != null)
+                    user.Password = "xxx";
+
+                return user;
+            }
+            catch (Exception)
+            {
+
+
+                throw;
+            }
         }
     }
 }
