@@ -8,8 +8,11 @@ namespace DataApp.Core.Factories
 {
     class DbContextFactory
     {
-        public static LiteDatabase CreateLiteDBContext()
+        public static LiteDatabase CreateLiteDBContext(string filename = null)
         {
+            if(filename != null)
+                return new LiteDatabase(filename);
+
             return new LiteDatabase("testdb.db");
         }
     }
