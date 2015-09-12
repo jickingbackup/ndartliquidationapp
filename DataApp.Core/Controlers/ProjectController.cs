@@ -15,46 +15,46 @@ namespace DataApp.Core.Controlers
     /// </summary>
     class ProjectController: AbstractController<Project>
     {
-        private IController<Expense> expensesController = ControllerFactory.CreateExpenseController();
+        //private IController<Expense> expensesController = null;
 
         public ProjectController(string collectioname,LiteDB.LiteDatabase dbContext)
             :base(collectioname,dbContext)
         {
-
+            //expensesController = controllerFactory.CreateExpenseController();
         }
 
-        public override Project Get(object id)
-        {
-            try
-            {
-                var project = base.Get(id);
-                project.Expenses = expensesController.Get().Where(x => x.ProjectId == project.Id);
-                return project;
-            }
-            catch (Exception)
-            {
+        //public override Project Get(object id)
+        //{
+        //    try
+        //    {
+        //        var project = base.Get(id);
+        //        project.Expenses = expensesController.Get().Where(x => x.ProjectId == project.Id);
+        //        return project;
+        //    }
+        //    catch (Exception)
+        //    {
                 
-                throw;
-            }
-        }
+        //        throw;
+        //    }
+        //}
 
-        public override IEnumerable<Project> Get()
-        {
-            try
-            {
-                var projects = base.Get();
-                foreach (var project in projects)
-                {
-                    project.Expenses = expensesController.Get().Where(x => x.ProjectId == project.Id);
+        //public override IEnumerable<Project> Get()
+        //{
+        //    try
+        //    {
+        //        var projects = base.Get();
+        //        foreach (var project in projects)
+        //        {
+        //            project.Expenses = expensesController.Get().Where(x => x.ProjectId == project.Id);
 
-                }
-                return projects;
-            }
-            catch (Exception)
-            {
+        //        }
+        //        return projects;
+        //    }
+        //    catch (Exception)
+        //    {
                 
-                throw;
-            }
-        }
+        //        throw;
+        //    }
+        //}
     }
 }

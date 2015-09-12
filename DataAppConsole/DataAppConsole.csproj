@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7B1E5FEC-A36B-43B3-B7CE-A5E159A8F647}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{139A208F-8E01-4ED2-95F8-6D487FEFE420}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataApp.Core</RootNamespace>
-    <AssemblyName>DataApp.Core</AssemblyName>
+    <RootNamespace>DataAppConsole</RootNamespace>
+    <AssemblyName>DataAppConsole</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,9 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LiteDB">
-      <HintPath>..\packages\LiteDB.1.0.2\lib\net40\LiteDB.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,26 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstracts\AbstractController.cs" />
-    <Compile Include="Abstracts\IController.cs" />
-    <Compile Include="Abstracts\IUserController.cs" />
-    <Compile Include="Controlers\CheckController.cs" />
-    <Compile Include="Controlers\CompanyController.cs" />
-    <Compile Include="Controlers\ExpenseController.cs" />
-    <Compile Include="Controlers\ProjectController.cs" />
-    <Compile Include="Models\Company.cs" />
-    <Compile Include="DataAppFacade.cs" />
-    <Compile Include="Controlers\UserController.cs" />
-    <Compile Include="Factories\ControllerFactory.cs" />
-    <Compile Include="Factories\DbContextFactory.cs" />
-    <Compile Include="Models\Check.cs" />
-    <Compile Include="Models\Expense.cs" />
-    <Compile Include="Models\Project.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataApp.Core\DataApp.Core.csproj">
+      <Project>{7b1e5fec-a36b-43b3-b7ce-a5e159a8f647}</Project>
+      <Name>DataApp.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

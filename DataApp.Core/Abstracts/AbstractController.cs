@@ -1,4 +1,5 @@
-﻿using LiteDB;
+﻿using DataApp.Core.Factories;
+using LiteDB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +13,15 @@ namespace DataApp.Core.Abstracts
         protected string collectionName = string.Empty;
         protected LiteDatabase db = null;
         protected LiteCollection<T> collection = null;
+        protected ControllerFactory controllerFactory = null;
 
         public AbstractController( string collectionName, LiteDatabase dbcontext )
         {
             this.collectionName = collectionName;
             db = dbcontext;
             collection = db.GetCollection<T>(collectionName);
-            collection.EnsureIndex("Id");
+            //collection.EnsureIndex("Id");
+            controllerFactory = new ControllerFactory();
         }
 
         #region IController

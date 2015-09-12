@@ -1,5 +1,4 @@
 ﻿using DataApp.Core.Abstracts;
-using DataApp.Core.Factories;
 using DataApp.Core.Models;
 using LiteDB;
 using System;
@@ -12,55 +11,57 @@ namespace DataApp.Core.Controlers
 {
     class ExpenseController:AbstractController<Expense>
     {
-        private IController<Check> checksController = ControllerFactory.CreateCheckController();
-        private IController<Company> companyController = ControllerFactory.CreateCompanyController();
-        private IController<Project> projectController = ControllerFactory.CreateProjectController();
+        //private IController<Check> checksController = null;
+        //private IController<Company> companyController = null;
+        //private IController<Project> projectController = null;
         
 
         public ExpenseController(string collectionName , LiteDatabase dbcontext)
             :base(collectionName,dbcontext)
         {
-                
+            //this.checksController = controllerFactory.CreateCheckController();
+            //this.companyController = controllerFactory.CreateCompanyController();
+            //this.projectController = controllerFactory.CreateProjectController();
         }
 
-        public override IEnumerable<Expense> Get()
-        {
-            try
-            {
-                var expenses = base.Get();
+        //public override IEnumerable<Expense> Get()
+        //{
+        //    try
+        //    {
+        //        var expenses = base.Get();
 
-                foreach (var expense in expenses)
-                {
-                    expense.Check = checksController.Get(expense.CheckId);
-                    expense.Company = companyController.Get(expense.CompanyId);
-                    expense.Project = projectController.Get(expense.ProjectId);
-                }
+        //        foreach (var expense in expenses)
+        //        {
+        //            expense.Check = checksController.Get(expense.CheckId);
+        //            expense.Company = companyController.Get(expense.CompanyId);
+        //            expense.Project = projectController.Get(expense.ProjectId);
+        //        }
 
-                return expenses;
-            }
-            catch (Exception)
-            {
+        //        return expenses;
+        //    }
+        //    catch (Exception)
+        //    {
                 
-                throw;
-            }
-        }
+        //        throw;
+        //    }
+        //}
 
-        public override Expense Get(object id)
-        {
-            try
-            {
-                var expense = base.Get(id);
-                expense.Check = checksController.Get(expense.CheckId);
-                expense.Company = companyController.Get(expense.CompanyId);
-                expense.Project = projectController.Get(expense.ProjectId);
-                return expense;
-            }
-            catch (Exception)
-            {
+        //public override Expense Get(object id)
+        //{
+        //    try
+        //    {
+        //        var expense = base.Get(id);
+        //        expense.Check = checksController.Get(expense.CheckId);
+        //        expense.Company = companyController.Get(expense.CompanyId);
+        //        expense.Project = projectController.Get(expense.ProjectId);
+        //        return expense;
+        //    }
+        //    catch (Exception)
+        //    {
                 
-                throw;
-            }
-        } 
+        //        throw;
+        //    }
+        //} 
     }
 }
 
