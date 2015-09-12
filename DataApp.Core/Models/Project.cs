@@ -15,5 +15,6 @@ namespace DataApp.Core.Models
 
         //Navigation Properties
         public IEnumerable<Expense> Expenses { get; set; }
+        
     }
 }

@@ -11,57 +11,54 @@ namespace DataApp.Core.Controlers
 {
     class ExpenseController:AbstractController<Expense>
     {
-        //private IController<Check> checksController = null;
-        //private IController<Company> companyController = null;
-        //private IController<Project> projectController = null;
-        
-
         public ExpenseController(string collectionName , LiteDatabase dbcontext)
             :base(collectionName,dbcontext)
         {
-            //this.checksController = controllerFactory.CreateCheckController();
-            //this.companyController = controllerFactory.CreateCompanyController();
-            //this.projectController = controllerFactory.CreateProjectController();
         }
 
-        //public override IEnumerable<Expense> Get()
-        //{
-        //    try
-        //    {
-        //        var expenses = base.Get();
+        public override IEnumerable<Expense> Get()
+        {
+            try
+            {
+                var expenses = base.Get();
 
-        //        foreach (var expense in expenses)
-        //        {
-        //            expense.Check = checksController.Get(expense.CheckId);
-        //            expense.Company = companyController.Get(expense.CompanyId);
-        //            expense.Project = projectController.Get(expense.ProjectId);
-        //        }
+                foreach (var expense in expenses)
+                {
+                    expense.Check = this.db.GetCollection<Check>("checks").FindById(expense.CheckId);
+                    expense.Company = this.db.GetCollection<Company>("companies").FindById(expense.CompanyId);
+                    expense.Project = this.db.GetCollection<Project>("projects").FindById(expense.ProjectId);
+                }
 
-        //        return expenses;
-        //    }
-        //    catch (Exception)
-        //    {
-                
-        //        throw;
-        //    }
-        //}
+                return expenses;
+            }
+            catch (Exception)
+            {
 
-        //public override Expense Get(object id)
-        //{
-        //    try
-        //    {
-        //        var expense = base.Get(id);
-        //        expense.Check = checksController.Get(expense.CheckId);
-        //        expense.Company = companyController.Get(expense.CompanyId);
-        //        expense.Project = projectController.Get(expense.ProjectId);
-        //        return expense;
-        //    }
-        //    catch (Exception)
-        //    {
-                
-        //        throw;
-        //    }
-        //} 
+                throw;
+            }
+        }
+
+        public override Expense Get(object id)
+        {
+            try
+            {
+                var expense = base.Get(id);
+
+                if (expense != null)
+                {
+                    expense.Check = this.db.GetCollection<Check>("checks").FindById(expense.CheckId);
+                    expense.Company = this.db.GetCollection<Company>("companies").FindById(expense.CompanyId);
+                    expense.Project = this.db.GetCollection<Project>("projects").FindById(expense.ProjectId);
+                }
+
+                return expense;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        } 
     }
 }
 

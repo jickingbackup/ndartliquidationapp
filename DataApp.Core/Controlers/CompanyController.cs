@@ -12,55 +12,65 @@ namespace DataApp.Core.Controlers
 {
     class CompanyController:AbstractController<Company>
     {
-        //private IController<Check> checksController = null;
-        //private IController<Expense> expensesController = null;
-
-
         public CompanyController(string collectionName , LiteDatabase dbcontext)
             :base(collectionName,dbcontext)
         {
-            //checksController = controllerFactory.CreateCheckController();
-            //expensesController = controllerFactory.CreateExpenseController();                
         }
 
-        //public override IEnumerable<Company> Get()
-        //{
-        //    try
-        //    {
-        //        var companies = base.Get();
+        public override IEnumerable<Company> Get()
+        {
+            try
+            {
+                var companies = base.Get();
 
-        //        foreach (var company in companies)
-        //        {
-        //            company.Checks = checksController.Get().Where(x => x.CompanyId == company.Id);
-        //            company.Expenses = expensesController.Get().Where(x => x.CompanyId == company.Id);
-        //        }
+                foreach (var company in companies)
+                {
+                    company.Checks = this.db.GetCollection<Check>("checks").FindAll().Where(x => x.CompanyId == company.Id);
+                    company.Expenses = this.db.GetCollection<Expense>("expenses").FindAll().Where(x => x.CompanyId == company.Id);
 
-        //        return companies;
-        //    }
-        //    catch (Exception)
-        //    {
-                
-        //        throw;
-        //    }
-        //}
+                    if (company.Checks== null)
+                        company.Checks = new List<Check>();
 
-        //public override Company Get(object id)
-        //{
-        //    try
-        //    {
-        //        var company = base.Get(id);
+                    if (company.Expenses == null)
+                        company.Expenses = new List<Expense>();
 
-        //        company.Checks = checksController.Get().Where(x => x.CompanyId == company.Id);
-        //        company.Expenses = expensesController.Get().Where(x => x.CompanyId == company.Id);
- 
-        //        return company;
-        //    }
-        //    catch (Exception)
-        //    {
-                
-        //        throw;
-        //    }
-        //}
+                }
+
+                return companies;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public override Company Get(object id)
+        {
+            try
+            {
+                var company = base.Get(id);
+
+                if(company != null)
+                {
+                    company.Checks = this.db.GetCollection<Check>("checks").FindAll().Where(x => x.CompanyId == company.Id);
+                    company.Expenses = this.db.GetCollection<Expense>("expenses").FindAll().Where(x => x.CompanyId == company.Id);
+
+                    if (company.Checks == null)
+                        company.Checks = new List<Check>();
+
+                    if (company.Expenses == null)
+                        company.Expenses = new List<Expense>();
+                }
+
+                return company;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
     }
 }

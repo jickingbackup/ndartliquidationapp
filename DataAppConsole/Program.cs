@@ -15,28 +15,24 @@ namespace DataAppConsole
 
             foreach (var item in x.UserController.Get())
             {
-                Console.WriteLine("{0} - {1}", item.Username, item.Password);
+                Console.WriteLine("USER: {0} - {1}", item.Username, item.Password);
             }
 
             foreach (var item in x.CheckController.Get())
             {
-                Console.WriteLine("{0} - {1}", item.IssuedOn.ToShortDateString(), item.VoucherNumber);
+                Console.WriteLine("CHECKS: {0} - {1}", item.IssuedOn.ToShortDateString(), item.VoucherNumber);
             }
 
             foreach (var item in x.CompanyController.Get())
             {
-                Console.WriteLine("{0} - {1}", item.Name, item.Description);
+                Console.WriteLine("COMPANY: {0} - {1}", item.Name, item.Description);
             }
 
             foreach (var item in x.ExpenseController.Get())
             {
-                Console.WriteLine("{0} - {1}", item.Date.ToShortDateString(), item.Description);
+                Console.WriteLine("EXPENSE {0} - {1}", item.Date.ToShortDateString(), item.Description);
             }
 
-            foreach (var item in x.ProjectController.Get())
-            {
-                Console.WriteLine("{0} - {1}", item.Name, item.Description);
-            }
 
             Console.Read();
         }

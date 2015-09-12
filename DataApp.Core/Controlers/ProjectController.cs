@@ -9,52 +9,55 @@ using System.Threading.Tasks;
 
 namespace DataApp.Core.Controlers
 {
-    /// <summary>
-    /// Congcrete controller for project.
-    /// Attach navigation properties.
-    /// </summary>
+
     class ProjectController: AbstractController<Project>
     {
-        //private IController<Expense> expensesController = null;
-
         public ProjectController(string collectioname,LiteDB.LiteDatabase dbContext)
             :base(collectioname,dbContext)
         {
-            //expensesController = controllerFactory.CreateExpenseController();
         }
 
-        //public override Project Get(object id)
-        //{
-        //    try
-        //    {
-        //        var project = base.Get(id);
-        //        project.Expenses = expensesController.Get().Where(x => x.ProjectId == project.Id);
-        //        return project;
-        //    }
-        //    catch (Exception)
-        //    {
-                
-        //        throw;
-        //    }
-        //}
+        public override Project Get(object id)
+        {
+            try
+            {
+                var project = base.Get(id);
 
-        //public override IEnumerable<Project> Get()
-        //{
-        //    try
-        //    {
-        //        var projects = base.Get();
-        //        foreach (var project in projects)
-        //        {
-        //            project.Expenses = expensesController.Get().Where(x => x.ProjectId == project.Id);
+                if (project != null)
+                {
+                    project.Expenses = this.db.GetCollection<Expense>("expenses").FindAll().Where(x => x.ProjectId == project.Id);
+                    if (project.Expenses == null)
+                        project.Expenses = new List<Expense>();
 
-        //        }
-        //        return projects;
-        //    }
-        //    catch (Exception)
-        //    {
-                
-        //        throw;
-        //    }
-        //}
+                }
+
+                return project;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public override IEnumerable<Project> Get()
+        {
+            try
+            {
+                var projects = base.Get();
+                foreach (var project in projects)
+                {
+                    project.Expenses = this.db.GetCollection<Expense>("expenses").FindAll().Where(x => x.ProjectId == project.Id);
+                    if (project.Expenses == null)
+                        project.Expenses = new List<Expense>();
+                }
+                return projects;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
