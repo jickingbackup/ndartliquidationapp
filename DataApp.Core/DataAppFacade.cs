@@ -18,10 +18,15 @@ namespace DataApp.Core
         public IController<Expense> ExpenseController { get; set; }
         public IController<Project> ProjectController { get; set; }
 
-        private ControllerFactory controllerFactory = new ControllerFactory();
+        private ControllerFactory controllerFactory = null;
 
-        public DataAppFacade()
+        public DataAppFacade(string dbpath = null)
         {
+            if(string.IsNullOrEmpty(dbpath) == false)
+                this.controllerFactory = new ControllerFactory(dbpath);
+            else
+                this.controllerFactory = new ControllerFactory();
+
             this.UserController = controllerFactory.CreateIUserController();
             this.CheckController = controllerFactory.CreateCheckController();
             this.CompanyController = controllerFactory.CreateCompanyController();

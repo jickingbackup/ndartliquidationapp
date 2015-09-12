@@ -12,8 +12,16 @@ namespace DataApp.Core.Factories
 {
     public class ControllerFactory
     {
-        private LiteDatabase db = DbContextFactory.CreateLiteDBContext();
+        private LiteDatabase db = null;
 
+        public ControllerFactory(string dbpath =null)
+        {
+            if (String.IsNullOrEmpty(dbpath) == false)
+                this.db = DbContextFactory.CreateLiteDBContext(dbpath);
+            else
+                this.db = DbContextFactory.CreateLiteDBContext();
+        }
+        
         public IUserController CreateIUserController()
         {
             return new UserController("users",db);
