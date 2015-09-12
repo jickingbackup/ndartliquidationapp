@@ -9,7 +9,10 @@ using System.Threading.Tasks;
 
 namespace DataApp.Core
 {
-    public class DataAppFacade
+    /// <summary>
+    /// Data App facade.
+    /// </summary>
+    public class DataAppCore
     {
 
         public IUserController UserController { get; set; }
@@ -20,7 +23,7 @@ namespace DataApp.Core
 
         private ControllerFactory controllerFactory = null;
 
-        public DataAppFacade(string dbpath = null)
+        public DataAppCore(string dbpath = null)
         {
             if(string.IsNullOrEmpty(dbpath) == false)
                 this.controllerFactory = new ControllerFactory(dbpath);
@@ -84,12 +87,12 @@ namespace DataApp.Core
                 ProjectId=1,
                 CompanyId = 1,
                 CheckId=1,
-                ORNUmber = "xxx"
+                ORNUmber = "xxx",
+                Description = "NA"
             };
 
             if (this.UserController.Get(rootUser.Id) == null)
                 this.UserController.Add(rootUser);
-
             
             if (this.CompanyController.Get(company.Id) == null)
                 this.CompanyController.Add(company);

@@ -1,6 +1,5 @@
 ﻿using DataApp.Core;
 using DataApp.Core.Models;
-using DataApp.Winforms.Factories;
 using System;
 using System.Windows.Forms;
 
@@ -8,19 +7,16 @@ namespace DataApp.Winforms
 {
     public partial class LoginForm : Form
     {
-        DataAppFacade db = DataAppFactory.Create();
+        DataAppCore db = DataAppFactory.Create();
+        MainForm mainform = null;
 
-
-        public LoginForm()
+        public LoginForm(MainForm form)
         {
             InitializeComponent();
+            this.mainform = form;
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
-        {
-            Login();
-        }
-
+        #region CUSTOM CODE
         private void Login()
         {
             User user = null;
@@ -32,18 +28,30 @@ namespace DataApp.Winforms
 
             user = db.UserController.Login(username, password);
 
-            if(user == null)
+            if (user == null)
             {
-                MessageBox.Show("Sorry,Invalid Credentials.");
+                MessageBox.Show("Sorry,Bad login.");
                 return;
             }
 
             //initilaize main form here
             //TODO: add it here.
-            MessageBox.Show("Creating main form...");
-
-            FormFactory.CreateMainForm().Show();
+            mainform.Show();
             this.Close();
+        } 
+        #endregion
+
+        #region EVENTS
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            Login();
         }
+
+        private void Exitbutton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Closing Application...");
+            mainform.Close();
+        }
+        #endregion
     }
 }

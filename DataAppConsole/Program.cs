@@ -11,7 +11,7 @@ namespace DataAppConsole
     {
         static void Main(string[] args)
         {
-            var x = new DataAppFacade("xxx.db");
+            var x = new DataAppCore("xxx.db");
 
             foreach (var item in x.UserController.Get())
             {

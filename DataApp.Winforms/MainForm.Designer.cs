@@ -32,10 +32,14 @@
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateUserDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.signoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lognoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rECORDSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.companiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.expensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,12 +47,11 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.userToolStripMenuItem,
-            this.projectsToolStripMenuItem,
-            this.expensesToolStripMenuItem,
-            this.checksToolStripMenuItem});
+            this.rECORDSToolStripMenuItem,
+            this.rEPORTSToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(477, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(624, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -57,10 +60,10 @@
             this.userToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.updateUserDetailsToolStripMenuItem,
             this.manageUsersToolStripMenuItem,
-            this.signoutToolStripMenuItem});
+            this.lognoutToolStripMenuItem});
             this.userToolStripMenuItem.Name = "userToolStripMenuItem";
-            this.userToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
-            this.userToolStripMenuItem.Text = "User";
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.userToolStripMenuItem.Text = "SETTINGS";
             // 
             // updateUserDetailsToolStripMenuItem
             // 
@@ -74,39 +77,76 @@
             this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.manageUsersToolStripMenuItem.Text = "Manage Users";
             // 
-            // signoutToolStripMenuItem
+            // lognoutToolStripMenuItem
             // 
-            this.signoutToolStripMenuItem.Name = "signoutToolStripMenuItem";
-            this.signoutToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.signoutToolStripMenuItem.Text = "Logout";
+            this.lognoutToolStripMenuItem.Name = "lognoutToolStripMenuItem";
+            this.lognoutToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.lognoutToolStripMenuItem.Text = "Logout";
+            this.lognoutToolStripMenuItem.Click += new System.EventHandler(this.lognoutToolStripMenuItem_Click);
+            // 
+            // rECORDSToolStripMenuItem
+            // 
+            this.rECORDSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.projectsToolStripMenuItem,
+            this.companiesToolStripMenuItem,
+            this.expensesToolStripMenuItem,
+            this.checksToolStripMenuItem});
+            this.rECORDSToolStripMenuItem.Name = "rECORDSToolStripMenuItem";
+            this.rECORDSToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.rECORDSToolStripMenuItem.Text = "RECORDS";
             // 
             // projectsToolStripMenuItem
             // 
             this.projectsToolStripMenuItem.Name = "projectsToolStripMenuItem";
-            this.projectsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.projectsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.projectsToolStripMenuItem.Text = "Projects";
+            this.projectsToolStripMenuItem.Click += new System.EventHandler(this.projectsToolStripMenuItem_Click);
+            // 
+            // companiesToolStripMenuItem
+            // 
+            this.companiesToolStripMenuItem.Name = "companiesToolStripMenuItem";
+            this.companiesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.companiesToolStripMenuItem.Text = "Companies";
             // 
             // expensesToolStripMenuItem
             // 
             this.expensesToolStripMenuItem.Name = "expensesToolStripMenuItem";
-            this.expensesToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.expensesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.expensesToolStripMenuItem.Text = "Expenses";
+            this.expensesToolStripMenuItem.Click += new System.EventHandler(this.expensesToolStripMenuItem_Click);
             // 
             // checksToolStripMenuItem
             // 
             this.checksToolStripMenuItem.Name = "checksToolStripMenuItem";
-            this.checksToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.checksToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.checksToolStripMenuItem.Text = "Checks";
+            // 
+            // rEPORTSToolStripMenuItem
+            // 
+            this.rEPORTSToolStripMenuItem.Name = "rEPORTSToolStripMenuItem";
+            this.rEPORTSToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.rEPORTSToolStripMenuItem.Text = "REPORTS";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 479);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(624, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 261);
+            this.ClientSize = new System.Drawing.Size(624, 501);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Expense Tracker";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -120,9 +160,13 @@
         private System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateUserDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageUsersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem signoutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem projectsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lognoutToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripMenuItem rEPORTSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rECORDSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem expensesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem projectsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem companiesToolStripMenuItem;
     }
 }

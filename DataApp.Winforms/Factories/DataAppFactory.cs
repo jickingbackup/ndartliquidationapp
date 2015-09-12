@@ -9,9 +9,9 @@ namespace DataApp.Winforms
 {
     static class DataAppFactory
     {
-        public static DataAppFacade Create()
+        public static DataAppCore Create()
         {
-            return new DataAppFacade();
+            return new DataAppCore();
         }
     }
 }

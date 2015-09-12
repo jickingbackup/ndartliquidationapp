@@ -61,6 +61,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChecksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChecksForm.Designer.cs">
+      <DependentUpon>ChecksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompaniesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompaniesForm.Designer.cs">
+      <DependentUpon>CompaniesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenseReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExpenseReportsForm.Designer.cs">
+      <DependentUpon>ExpenseReportsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExpensesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExpensesForm.Designer.cs">
+      <DependentUpon>ExpensesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Factories\DataAppFactory.cs" />
     <Compile Include="Factories\FormFactory.cs" />
     <Compile Include="LoginForm.cs">
@@ -76,12 +100,21 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProjectsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectsForm.Designer.cs">
+      <DependentUpon>ProjectsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectsForm.resx">
+      <DependentUpon>ProjectsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

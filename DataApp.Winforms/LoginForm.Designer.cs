@@ -33,11 +33,13 @@
             this.passwordtextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.Exitbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(229, 90);
+            this.loginButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.loginButton.Location = new System.Drawing.Point(148, 89);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(75, 23);
             this.loginButton.TabIndex = 0;
@@ -47,17 +49,25 @@
             // 
             // usernametextBox
             // 
+            this.usernametextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.usernametextBox.Location = new System.Drawing.Point(12, 25);
             this.usernametextBox.Name = "usernametextBox";
             this.usernametextBox.Size = new System.Drawing.Size(292, 20);
             this.usernametextBox.TabIndex = 1;
+            this.usernametextBox.Text = "root";
             // 
             // passwordtextBox
             // 
+            this.passwordtextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.passwordtextBox.Location = new System.Drawing.Point(12, 64);
             this.passwordtextBox.Name = "passwordtextBox";
             this.passwordtextBox.Size = new System.Drawing.Size(292, 20);
             this.passwordtextBox.TabIndex = 2;
+            this.passwordtextBox.Text = "toor";
             // 
             // label1
             // 
@@ -77,11 +87,23 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Password";
             // 
+            // Exitbutton
+            // 
+            this.Exitbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Exitbutton.Location = new System.Drawing.Point(229, 89);
+            this.Exitbutton.Name = "Exitbutton";
+            this.Exitbutton.Size = new System.Drawing.Size(75, 23);
+            this.Exitbutton.TabIndex = 5;
+            this.Exitbutton.Text = "Exit";
+            this.Exitbutton.UseVisualStyleBackColor = true;
+            this.Exitbutton.Click += new System.EventHandler(this.Exitbutton_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(316, 124);
+            this.Controls.Add(this.Exitbutton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.passwordtextBox);
@@ -91,7 +113,7 @@
             this.MinimizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "User Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,6 +126,7 @@
         private System.Windows.Forms.TextBox passwordtextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Exitbutton;
     }
 }
 
