@@ -45,10 +45,14 @@
     <Compile Include="Abstracts\AbstractController.cs" />
     <Compile Include="Abstracts\IController.cs" />
     <Compile Include="Abstracts\IUserController.cs" />
+    <Compile Include="Models\Company.cs" />
     <Compile Include="DataAppFacade.cs" />
     <Compile Include="Controlers\UserController.cs" />
     <Compile Include="Factories\ControllerFactory.cs" />
     <Compile Include="Factories\DbContextFactory.cs" />
+    <Compile Include="Models\Check.cs" />
+    <Compile Include="Models\Expense.cs" />
+    <Compile Include="Models\Project.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -10,7 +10,7 @@ namespace DataApp.Winforms.Factories
     {
         public static LoginForm CreateLoginForm()
         {
-            return new LoginForm();
+            return new LoginForm() { StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen};
         }
 
         public static MainForm CreateMainForm()
