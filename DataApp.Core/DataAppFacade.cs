@@ -27,6 +27,8 @@ namespace DataApp.Core
 
             if (this.UserController.Get(rootUser.Id) == null)
                 this.UserController.Add(rootUser);
+
+
         }
     }
 }

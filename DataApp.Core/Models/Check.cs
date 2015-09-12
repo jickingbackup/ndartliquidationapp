@@ -14,13 +14,14 @@ namespace DataApp.Core.Models
         public DateTime IssuedOn{ get; set; }
         public bool IsHidden{ get; set; }
 
+        
         //relations
         public int  CompanyId{ get; set; }
 
+        //Navigation Properties
         public Company Company { get; set; }
 
-        //collections
-        public List<Expense> Expenses { get; set; }
+        public IEnumerable<Expense> Expenses { get; set; }
         
     }
 }

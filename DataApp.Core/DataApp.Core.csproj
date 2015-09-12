@@ -45,6 +45,10 @@
     <Compile Include="Abstracts\AbstractController.cs" />
     <Compile Include="Abstracts\IController.cs" />
     <Compile Include="Abstracts\IUserController.cs" />
+    <Compile Include="Controlers\CheckController.cs" />
+    <Compile Include="Controlers\CompanyController.cs" />
+    <Compile Include="Controlers\ExpenseController.cs" />
+    <Compile Include="Controlers\ProjectController.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="DataAppFacade.cs" />
     <Compile Include="Controlers\UserController.cs" />

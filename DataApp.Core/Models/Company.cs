@@ -15,8 +15,8 @@ namespace DataApp.Core.Models
         public string Email { get; set; }
         public bool IsHidden { get; set; }
 
-        //collections
-        public List<Check> Checks { get; set; }
-        public List<Expense> Expenses { get; set; }
+        //Navigation Properties
+        public IEnumerable<Check> Checks { get; set; }
+        public IEnumerable<Expense> Expenses { get; set; }
     }
 }

@@ -74,7 +74,7 @@ namespace DataApp.Core.Controlers
         }
 
         //for security reasons
-        public override List<User> Get()
+        public override IEnumerable<User> Get()
         {
             try
             {

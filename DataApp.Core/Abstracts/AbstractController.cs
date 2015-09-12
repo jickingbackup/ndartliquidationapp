@@ -22,6 +22,36 @@ namespace DataApp.Core.Abstracts
         }
 
         #region IController
+
+        #region READ
+        public virtual IEnumerable<T> Get()
+        {
+            try
+            {
+                return this.collection.FindAll();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public virtual T Get(object id)
+        {
+            try
+            {
+                return collection.FindById((int)id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        #endregion
+
+        #region Update
         /// <summary>
         /// TODO: add checking|validation on child classes
         /// </summary>
@@ -48,7 +78,7 @@ namespace DataApp.Core.Abstracts
         {
             try
             {
-                if(this.collection.Delete((int)id))
+                if (this.collection.Delete((int)id))
                     return true;
 
                 return false;
@@ -74,41 +104,7 @@ namespace DataApp.Core.Abstracts
 
                 throw;
             }
-        }
-
-        #region READ
-        public virtual List<T> Get()
-        {
-            try
-            {
-                List<T> result = new List<T>();
-
-                foreach (var item in this.collection.FindAll())
-                {
-                    result.Add(item);
-                }
-
-                return result;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
-        public virtual T Get(object id)
-        {
-            try
-            {
-                return collection.FindById((int)id);
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
+        } 
         #endregion
 
         #endregion
