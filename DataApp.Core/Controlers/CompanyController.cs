@@ -72,5 +72,23 @@ namespace DataApp.Core.Controlers
             }
         }
 
+
+        public override bool Add(Company entity)
+        {
+            entity.Checks = null;
+            entity.Expenses = null;
+
+            return base.Add(entity);
+        }
+
+        public override bool Update(Company entity)
+        {
+            entity.Expenses = null;
+            entity.Checks = null;
+            
+            return base.Update(entity);
+        }
+
+
     }
 }

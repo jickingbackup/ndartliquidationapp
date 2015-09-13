@@ -68,6 +68,13 @@ namespace DataApp.Core
                 IsHidden = false
             };
 
+            Project project2 = new Project()
+            {
+                Id = 2,
+                Name = "NA X",
+                Description = "NA X",
+                IsHidden = false
+            };
             Check check = new Check()
             {
                 Id = 1,
@@ -99,6 +106,9 @@ namespace DataApp.Core
 
             if (this.ProjectController.Get(project.Id) == null)
                 this.ProjectController.Add(project);
+
+            if (this.ProjectController.Get(project2.Id) == null)
+                this.ProjectController.Add(project2);
 
             if (this.CheckController.Get(check.Id) == null)
                 this.CheckController.Add(check);

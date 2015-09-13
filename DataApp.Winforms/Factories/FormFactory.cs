@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DataApp.Winforms
 {
@@ -90,6 +91,11 @@ namespace DataApp.Winforms
                 WindowState = System.Windows.Forms.FormWindowState.Maximized,
                 Text = "COMPANIES"
             };
+        }
+
+        public static void SetDataForm(Form form)
+        {
+
         }
     }
 }

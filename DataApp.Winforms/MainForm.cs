@@ -17,9 +17,20 @@ namespace DataApp.Winforms
         private User currentUser = null;
         private DataAppCore dataAppCore = null;
 
+        public DataAppCore DataAppCore
+        {
+            get
+            {
+                return this.dataAppCore;
+            }
+        }
+
         //child forms
         ProjectsForm projectForm = null;
         ExpensesForm expensesForm = null;
+        ChecksForm checksForm = null;
+        CompaniesForm companiesForm = null;
+
 
         public MainForm()
         {
@@ -72,12 +83,44 @@ namespace DataApp.Winforms
             expensesForm.Show();
         }
 
+        void DisplayChecksForm()
+        {
+            if (checksForm == null || checksForm.IsDisposed)
+            {
+                this.checksForm = FormFactory.CreateChecksForm(this);
+                checksForm.MdiParent = this;
+            }
+            checksForm.Show();
+        }
+
+        void DisplayCompaniesForm()
+        {
+            if (companiesForm == null || companiesForm.IsDisposed)
+            {
+                this.companiesForm = FormFactory.CreateCompaniesForm(this);
+                companiesForm.MdiParent = this;
+            }
+            companiesForm.Show();
+        }
+
         void HideAllForm()
         {
             foreach (var item in this.MdiChildren)
             {
                 item.Hide();
             }
+        }
+
+        //PUBLIC METHODS
+        public void WriteStatusBar(string message = null)
+        {
+            if (message == null)
+            {
+                toolStripStatusLabel1.Text = "----";
+                return;
+            }
+
+            toolStripStatusLabel1.Text = message;
         }
 
         //ExpensesForm
@@ -101,12 +144,30 @@ namespace DataApp.Winforms
         {
             HideAllForm();
             DisplayProjectsForm();
+            WriteStatusBar();
         }
 
         private void expensesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HideAllForm();
             DisplayExpensesForm();
+            WriteStatusBar();
+
+        }
+
+        private void companiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HideAllForm();
+            DisplayCompaniesForm();
+            WriteStatusBar();
+
+        }
+
+        private void checksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HideAllForm();
+            DisplayChecksForm();
+            WriteStatusBar();
         }
     }
 }
