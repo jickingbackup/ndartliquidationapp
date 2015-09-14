@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LiteDB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,8 +23,11 @@ namespace DataApp.Core.Models
         public int ProjectId { get; set; }
 
         //Navigation Properties
+        [BsonIgnoreAttribute]
         public Check Check { get; set; }
+        [BsonIgnoreAttribute]
         public Company Company { get; set; }
+        [BsonIgnoreAttribute]
         public Project Project { get; set; }
     }
 }

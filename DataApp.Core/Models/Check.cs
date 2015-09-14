@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LiteDB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,7 @@ namespace DataApp.Core.Models
         //Navigation Properties
         public Company Company { get; set; }
 
+        [BsonIgnoreAttribute]
         public IEnumerable<Expense> Expenses { get; set; }
         
     }

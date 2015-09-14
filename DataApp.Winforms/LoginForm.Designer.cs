@@ -65,6 +65,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.passwordtextBox.Location = new System.Drawing.Point(12, 64);
             this.passwordtextBox.Name = "passwordtextBox";
+            this.passwordtextBox.PasswordChar = '*';
             this.passwordtextBox.Size = new System.Drawing.Size(292, 20);
             this.passwordtextBox.TabIndex = 2;
             this.passwordtextBox.Text = "toor";

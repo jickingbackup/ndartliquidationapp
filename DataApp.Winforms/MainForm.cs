@@ -169,5 +169,10 @@ namespace DataApp.Winforms
             DisplayChecksForm();
             WriteStatusBar();
         }
+
+        public enum StatusBarCode
+        {
+            success,failed,invalid
+        }
     }
 }

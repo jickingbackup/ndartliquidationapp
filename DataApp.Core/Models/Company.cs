@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LiteDB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,9 @@ namespace DataApp.Core.Models
         public bool IsHidden { get; set; }
 
         //Navigation Properties
+        [BsonIgnoreAttribute]
         public IEnumerable<Check> Checks { get; set; }
+        [BsonIgnoreAttribute]
         public IEnumerable<Expense> Expenses { get; set; }
     }
 }
