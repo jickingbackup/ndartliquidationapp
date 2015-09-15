@@ -149,30 +149,43 @@ namespace DataApp.Winforms
 
         private void expensesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HideAllForm();
-            DisplayExpensesForm();
-            WriteStatusBar();
+            //HideAllForm();
+            //DisplayExpensesForm();
+            //WriteStatusBar();
+            MessageBox.Show("To be implemented.");
 
         }
 
         private void companiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HideAllForm();
-            DisplayCompaniesForm();
-            WriteStatusBar();
+            //HideAllForm();
+            //DisplayCompaniesForm();
+            //WriteStatusBar();
+            MessageBox.Show("To be implemented.");
 
         }
 
         private void checksToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HideAllForm();
-            DisplayChecksForm();
-            WriteStatusBar();
+            //HideAllForm();
+            //DisplayChecksForm();
+            //WriteStatusBar();
+            MessageBox.Show("To be implemented.");
         }
 
         public enum StatusBarCode
         {
             success,failed,invalid
+        }
+
+        private void updateUserDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("To be implemented.");
+        }
+
+        private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("To be implemented.");
         }
     }
 }

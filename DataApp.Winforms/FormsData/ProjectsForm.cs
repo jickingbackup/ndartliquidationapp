@@ -241,6 +241,7 @@ namespace DataApp.Winforms
         private void buttonDetailsSaveChanges_Click(object sender, EventArgs e)
         {
             SaveDataToDB();
+            //LoadDataToGrid();
         }
 
         private void buttonDetailsReset_Click(object sender, EventArgs e)
@@ -251,18 +252,21 @@ namespace DataApp.Winforms
         private void buttonDetailsDelete_Click(object sender, EventArgs e)
         {
             DeleteObject();
+            //LoadDataToGrid();
+
         }
 
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
             TogleUpdateButtons();
         }
-        #endregion
 
         private void buttonDetailsUpdate_Click(object sender, EventArgs e)
         {
             SaveDataToDB(true);
+            //LoadDataToGrid();
         }
+        #endregion
 
 
         private void contextMenuStrip1_Click(object sender, EventArgs e)
@@ -270,10 +274,6 @@ namespace DataApp.Winforms
             EditSelectedObject();
         }
         #endregion
-
-        
-
-
 
     }
 }

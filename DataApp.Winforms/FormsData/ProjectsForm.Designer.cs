@@ -32,6 +32,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageSearch = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStripGridView = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemEditRow = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.checkBoxIncludeHidden = new System.Windows.Forms.CheckBox();
             this.numericUpDownId = new System.Windows.Forms.NumericUpDown();
@@ -56,11 +58,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxDetailsName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.contextMenuStripGridView = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItemEditRow = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPageSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStripGridView.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxRow)).BeginInit();
@@ -68,7 +69,6 @@
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDetailsID)).BeginInit();
-            this.contextMenuStripGridView.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -112,6 +112,20 @@
             this.dataGridView1.Size = new System.Drawing.Size(602, 212);
             this.dataGridView1.StandardTab = true;
             this.dataGridView1.TabIndex = 6;
+            // 
+            // contextMenuStripGridView
+            // 
+            this.contextMenuStripGridView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemEditRow});
+            this.contextMenuStripGridView.Name = "contextMenuStrip1";
+            this.contextMenuStripGridView.Size = new System.Drawing.Size(131, 26);
+            this.contextMenuStripGridView.Click += new System.EventHandler(this.contextMenuStrip1_Click);
+            // 
+            // toolStripMenuItemEditRow
+            // 
+            this.toolStripMenuItemEditRow.Name = "toolStripMenuItemEditRow";
+            this.toolStripMenuItemEditRow.Size = new System.Drawing.Size(130, 22);
+            this.toolStripMenuItemEditRow.Text = "VIEW/EDIT";
             // 
             // groupBox2
             // 
@@ -244,7 +258,7 @@
             this.tabPageDetails.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageDetails.Size = new System.Drawing.Size(616, 355);
             this.tabPageDetails.TabIndex = 1;
-            this.tabPageDetails.Text = "Details";
+            this.tabPageDetails.Text = "New/Edit";
             this.tabPageDetails.UseVisualStyleBackColor = true;
             // 
             // groupBox3
@@ -392,20 +406,6 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Name :";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStripGridView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemEditRow});
-            this.contextMenuStripGridView.Name = "contextMenuStrip1";
-            this.contextMenuStripGridView.Size = new System.Drawing.Size(153, 48);
-            this.contextMenuStripGridView.Click += new System.EventHandler(this.contextMenuStrip1_Click);
-            // 
-            // toolStripMenuItemEditRow
-            // 
-            this.toolStripMenuItemEditRow.Name = "toolStripMenuItemEditRow";
-            this.toolStripMenuItemEditRow.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItemEditRow.Text = "VIEW/EDIT";
-            // 
             // ProjectsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -421,6 +421,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPageSearch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStripGridView.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownId)).EndInit();
@@ -430,7 +431,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDetailsID)).EndInit();
-            this.contextMenuStripGridView.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

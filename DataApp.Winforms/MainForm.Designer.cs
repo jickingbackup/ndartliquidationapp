@@ -72,12 +72,14 @@
             this.updateUserDetailsToolStripMenuItem.Name = "updateUserDetailsToolStripMenuItem";
             this.updateUserDetailsToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.updateUserDetailsToolStripMenuItem.Text = "Update User Details";
+            this.updateUserDetailsToolStripMenuItem.Click += new System.EventHandler(this.updateUserDetailsToolStripMenuItem_Click);
             // 
             // manageUsersToolStripMenuItem
             // 
             this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
             this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.manageUsersToolStripMenuItem.Text = "Manage Users";
+            this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
             // 
             // lognoutToolStripMenuItem
             // 
