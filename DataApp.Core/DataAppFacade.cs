@@ -17,9 +17,10 @@ namespace DataApp.Core
 
         public IUserController UserController { get; set; }
         public IController<Check> CheckController { get; set; }
-        public IController<Company> CompanyController { get; set; }
         public IController<Expense> ExpenseController { get; set; }
         public IController<Project> ProjectController { get; set; }
+
+        public LiteDB.LiteDatabase db = DbContextFactory.CreateLiteDBContext();
 
         private ControllerFactory controllerFactory = null;
 
@@ -32,7 +33,6 @@ namespace DataApp.Core
 
             this.UserController = controllerFactory.CreateIUserController();
             this.CheckController = controllerFactory.CreateCheckController();
-            this.CompanyController = controllerFactory.CreateCompanyController();
             this.ExpenseController = controllerFactory.CreateExpenseController();
             this.ProjectController = controllerFactory.CreateProjectController();
 
@@ -50,64 +50,11 @@ namespace DataApp.Core
                 Token = ""
             };
 
-            Company company = new Company()
-            {
-                Id = 1,
-                Name = "NA",
-                Description = "NA",
-                Email = "NA",
-                IsHidden = false,
-                Contact = "NA"
-            };
 
-            Project project = new Project()
-            {
-                Id = 1,
-                Name = "NA",
-                Description = "NA",
-                IsHidden = false
-            };
-
-            Check check = new Check()
-            {
-                Id = 1,
-                IsHidden = false,
-                IssuedOn = DateTime.Now,
-                VoucherNumber = "NA",
-                Amount = 0,
-                CompanyId = 1
-            };
-
-            Expense expense = new Expense()
-            {
-                Id = 1,
-                IsHidden = false,
-                Date = DateTime.Now,
-                Amount = 0,
-                ProjectId=1,
-                CompanyId = 1,
-                CheckId=1,
-                ORNUmber = "xxx",
-                Description = "NA"
-            };
+            
 
             if (this.UserController.Get(rootUser.Id) == null)
                 this.UserController.Add(rootUser);
-            
-            if (this.CompanyController.Get(company.Id) == null)
-                this.CompanyController.Add(company);
-
-            if (this.ProjectController.Get(project.Id) == null)
-                this.ProjectController.Add(project);
-
-            //if (this.ProjectController.Get(project2.Id) == null)
-            //    this.ProjectController.Add(project2);
-
-            if (this.CheckController.Get(check.Id) == null)
-                this.CheckController.Add(check);
-
-            if (this.ExpenseController.Get(expense.Id) == null)
-                this.ExpenseController.Add(expense);
 
         }
     }

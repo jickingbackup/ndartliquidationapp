@@ -67,19 +67,6 @@ namespace DataApp.Winforms
             };
         }
 
-        public static CompaniesForm CreateCompaniesForm(MainForm form)
-        {
-            return new CompaniesForm(form)
-            {
-                StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen,
-                ShowInTaskbar = false,
-                ShowIcon = false,
-                ControlBox = false,
-                WindowState = System.Windows.Forms.FormWindowState.Maximized,
-                Text="COMPANIES"
-            };
-        }
-
         public static ExpenseReportsForm CreateExpenseReportsForm(MainForm form)
         {
             return new ExpenseReportsForm()

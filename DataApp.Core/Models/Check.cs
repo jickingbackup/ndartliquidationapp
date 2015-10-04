@@ -12,15 +12,8 @@ namespace DataApp.Core.Models
         public int Id { get; set; }
         public String VoucherNumber { get; set; }
         public Decimal Amount { get; set; }
-        public DateTime IssuedOn{ get; set; }
         public bool IsHidden{ get; set; }
-
-        
-        //relations
-        public int  CompanyId{ get; set; }
-
-        //Navigation Properties
-        public Company Company { get; set; }
+        public DateTime IssueDate { get; set; }
 
         [BsonIgnoreAttribute]
         public IEnumerable<Expense> Expenses { get; set; }

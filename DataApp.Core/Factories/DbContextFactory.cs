@@ -13,7 +13,7 @@ namespace DataApp.Core.Factories
             if(string.IsNullOrEmpty(filepath) == false)
                 return new LiteDatabase(filepath);
 
-            return new LiteDatabase("testdb.db");
+            return new LiteDatabase("ndrtdb.db");
         }
     }
 }

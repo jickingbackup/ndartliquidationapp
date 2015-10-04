@@ -105,7 +105,6 @@ namespace DataApp.Winforms
             {
                 numericUpDownDetailsID.Value = currentProject.Id;
                 textBoxDetailsName.Text = currentProject.Name;
-                textBoxDetailsDescription.Text = currentProject.Description  ;
             }
         }
 
@@ -113,7 +112,6 @@ namespace DataApp.Winforms
         {
             currentProject.Id = Convert.ToInt32(numericUpDownDetailsID.Value);
             currentProject.Name = textBoxDetailsName.Text;
-            currentProject.Description = textBoxDetailsDescription.Text;
         }
 
 
@@ -147,7 +145,7 @@ namespace DataApp.Winforms
                 MapControlsToObject();
 
                 //validate
-                if (string.IsNullOrEmpty(currentProject.Name) || string.IsNullOrEmpty(currentProject.Description))
+                if (string.IsNullOrEmpty(currentProject.Name))
                 {
                     MessageBox.Show("Please check empty input fields.");
                     return;

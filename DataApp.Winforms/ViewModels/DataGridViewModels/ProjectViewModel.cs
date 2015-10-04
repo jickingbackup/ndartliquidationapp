@@ -13,7 +13,6 @@ namespace DataApp.Winforms.ViewModels.DataGridViewModels
 
         public int Id { get { return project.Id; } }
         public string Name { get { return project.Name; } }
-        public string Description { get { return project.Description; } }
         public string Hidden { get { return project.IsHidden ? "yes" : "no"; } }
         
 

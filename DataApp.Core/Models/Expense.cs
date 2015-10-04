@@ -11,23 +11,41 @@ namespace DataApp.Core.Models
     {
         public int Id{ get; set; }
         public string ORNUmber { get; set; }
+        public string CompanyName { get; set; }        
         public string Description { get; set; }
         public decimal Amount{ get; set; }
         public DateTime Date{ get; set; }
         public bool IsHidden{ get; set; }
-
+        public Category ExpenseCategory { get; set; }
 
         //relations
         public int CheckId { get; set; }
-        public int CompanyId { get; set; }
         public int ProjectId { get; set; }
 
         //Navigation Properties
         [BsonIgnoreAttribute]
         public Check Check { get; set; }
-        [BsonIgnoreAttribute]
-        public Company Company { get; set; }
+        
         [BsonIgnoreAttribute]
         public Project Project { get; set; }
+
+        public enum Category
+        {
+            Communication,
+            Representation,
+            Transportation,
+            Fuel,
+            OfficeSupplies,
+            OfficeEquipments,
+            Rental,
+            ManPower,
+            Materials,
+            CashAdvance,
+            Commission,
+            ToolsAndEquipments,
+            MISC
+        }
     }
+
+
 }

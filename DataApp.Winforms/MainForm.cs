@@ -29,8 +29,6 @@ namespace DataApp.Winforms
         ProjectsForm projectForm = null;
         ExpensesForm expensesForm = null;
         ChecksForm checksForm = null;
-        CompaniesForm companiesForm = null;
-
 
         public MainForm()
         {
@@ -93,15 +91,6 @@ namespace DataApp.Winforms
             checksForm.Show();
         }
 
-        void DisplayCompaniesForm()
-        {
-            if (companiesForm == null || companiesForm.IsDisposed)
-            {
-                this.companiesForm = FormFactory.CreateCompaniesForm(this);
-                companiesForm.MdiParent = this;
-            }
-            companiesForm.Show();
-        }
 
         void HideAllForm()
         {

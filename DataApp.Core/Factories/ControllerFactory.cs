@@ -32,11 +32,6 @@ namespace DataApp.Core.Factories
             return new CheckController("checks", db);
         }
 
-        public IController<Company> CreateCompanyController()
-        {
-            return new CompanyController("companies", db);
-        }
-
         public IController<Expense> CreateExpenseController()
         {
             return new ExpenseController("expenses", db);

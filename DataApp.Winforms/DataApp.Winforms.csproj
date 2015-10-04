@@ -68,12 +68,6 @@
     <Compile Include="FormsData\ChecksForm.Designer.cs">
       <DependentUpon>ChecksForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsData\CompaniesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormsData\CompaniesForm.Designer.cs">
-      <DependentUpon>CompaniesForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormsReports\ExpenseReportsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,9 +103,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\DataGridViewModels\ProjectViewModel.cs" />
-    <EmbeddedResource Include="FormsData\CompaniesForm.resx">
-      <DependentUpon>CompaniesForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -25,7 +25,6 @@ namespace DataApp.Core.Controlers
                 foreach (var expense in expenses)
                 {
                     expense.Check = this.db.GetCollection<Check>("checks").FindById(expense.CheckId);
-                    expense.Company = this.db.GetCollection<Company>("companies").FindById(expense.CompanyId);
                     expense.Project = this.db.GetCollection<Project>("projects").FindById(expense.ProjectId);
                 }
 
@@ -47,7 +46,6 @@ namespace DataApp.Core.Controlers
                 if (expense != null)
                 {
                     expense.Check = this.db.GetCollection<Check>("checks").FindById(expense.CheckId);
-                    expense.Company = this.db.GetCollection<Company>("companies").FindById(expense.CompanyId);
                     expense.Project = this.db.GetCollection<Project>("projects").FindById(expense.ProjectId);
                 }
 
@@ -63,7 +61,6 @@ namespace DataApp.Core.Controlers
         public override bool Add(Expense entity)
         {
             entity.Check = null;
-            entity.Company = null;
             entity.Project = null;
             
             return base.Add(entity);
@@ -72,7 +69,6 @@ namespace DataApp.Core.Controlers
         public override bool Update(Expense entity)
         {
             entity.Check = null;
-            entity.Company = null;
             entity.Project = null;
             
             return base.Update(entity);
