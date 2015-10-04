@@ -38,7 +38,7 @@
             this.checkBoxIncludeHidden = new System.Windows.Forms.CheckBox();
             this.numericUpDownId = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.buttonClearFilters = new System.Windows.Forms.Button();
+            this.buttonSearchClearFilters = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDownMaxRow = new System.Windows.Forms.NumericUpDown();
             this.buttonSearch = new System.Windows.Forms.Button();
@@ -134,7 +134,7 @@
             this.groupBox2.Controls.Add(this.checkBoxIncludeHidden);
             this.groupBox2.Controls.Add(this.numericUpDownId);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.buttonClearFilters);
+            this.groupBox2.Controls.Add(this.buttonSearchClearFilters);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.numericUpDownMaxRow);
             this.groupBox2.Controls.Add(this.buttonSearch);
@@ -178,16 +178,16 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Id :";
             // 
-            // buttonClearFilters
+            // buttonSearchClearFilters
             // 
-            this.buttonClearFilters.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonClearFilters.Location = new System.Drawing.Point(522, 97);
-            this.buttonClearFilters.Name = "buttonClearFilters";
-            this.buttonClearFilters.Size = new System.Drawing.Size(75, 23);
-            this.buttonClearFilters.TabIndex = 9;
-            this.buttonClearFilters.Text = "Reset";
-            this.buttonClearFilters.UseVisualStyleBackColor = true;
-            this.buttonClearFilters.Click += new System.EventHandler(this.buttonClearFilters_Click);
+            this.buttonSearchClearFilters.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSearchClearFilters.Location = new System.Drawing.Point(522, 97);
+            this.buttonSearchClearFilters.Name = "buttonSearchClearFilters";
+            this.buttonSearchClearFilters.Size = new System.Drawing.Size(75, 23);
+            this.buttonSearchClearFilters.TabIndex = 9;
+            this.buttonSearchClearFilters.Text = "Reset";
+            this.buttonSearchClearFilters.UseVisualStyleBackColor = true;
+            this.buttonSearchClearFilters.Click += new System.EventHandler(this.buttonClearFilters_Click);
             // 
             // label2
             // 
@@ -446,7 +446,7 @@
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxFilterName;
-        private System.Windows.Forms.Button buttonClearFilters;
+        private System.Windows.Forms.Button buttonSearchClearFilters;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numericUpDownId;

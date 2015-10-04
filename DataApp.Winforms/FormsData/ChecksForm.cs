@@ -32,7 +32,7 @@ namespace DataApp.Winforms
         #region CUSTOM CODE
 
         #region SEARCH
-        void LoadDataToGrid()
+        void LoadDataToGrid(string message = null)
         {
             //TODO: check filters
             int checkID = Convert.ToInt32(numericUpDownId.Value);
@@ -66,7 +66,11 @@ namespace DataApp.Winforms
             }
 
             dataGridView1.DataSource = result;
-            
+            if (message != null)
+            {
+                mainform.WriteStatusBar(message);
+                return;
+            }
             mainform.WriteStatusBar(String.Format("Total Rows : {0}", result.Count));
         }
 
@@ -246,7 +250,7 @@ namespace DataApp.Winforms
         private void buttonDetailsSaveChanges_Click(object sender, EventArgs e)
         {
             SaveDataToDB();
-            LoadDataToGrid();
+            LoadDataToGrid("Updated Record");
         }
 
         private void buttonDetailsReset_Click(object sender, EventArgs e)
@@ -257,7 +261,7 @@ namespace DataApp.Winforms
         private void buttonDetailsDelete_Click(object sender, EventArgs e)
         {
             DeleteObject();
-            LoadDataToGrid();
+            LoadDataToGrid("Updated Record");
 
         }
 
@@ -269,7 +273,7 @@ namespace DataApp.Winforms
         private void buttonDetailsUpdate_Click(object sender, EventArgs e)
         {
             SaveDataToDB(true);
-            LoadDataToGrid();
+            LoadDataToGrid("Updated Record");
         }
         #endregion
 

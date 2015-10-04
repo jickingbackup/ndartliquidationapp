@@ -138,10 +138,10 @@ namespace DataApp.Winforms
 
         private void expensesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //HideAllForm();
-            //DisplayExpensesForm();
-            //WriteStatusBar();
-            MessageBox.Show("To be implemented.");
+            HideAllForm();
+            DisplayExpensesForm();
+            WriteStatusBar();
+            //MessageBox.Show("To be implemented.");
 
         }
 
@@ -166,6 +166,11 @@ namespace DataApp.Winforms
         private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("To be implemented.");
+        }
+
+        private void rEPORTSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

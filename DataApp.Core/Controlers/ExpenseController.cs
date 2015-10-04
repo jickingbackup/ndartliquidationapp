@@ -20,7 +20,7 @@ namespace DataApp.Core.Controlers
         {
             try
             {
-                var expenses = base.Get();
+                var expenses = base.Get().ToList();
 
                 foreach (var expense in expenses)
                 {
