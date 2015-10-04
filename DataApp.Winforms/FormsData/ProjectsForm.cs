@@ -214,7 +214,6 @@ namespace DataApp.Winforms
 
         #endregion
 
-
         #region EVENTS
 
         #region SEARCH
@@ -239,7 +238,7 @@ namespace DataApp.Winforms
         private void buttonDetailsSaveChanges_Click(object sender, EventArgs e)
         {
             SaveDataToDB();
-            //LoadDataToGrid();
+            LoadDataToGrid();
         }
 
         private void buttonDetailsReset_Click(object sender, EventArgs e)
@@ -250,7 +249,7 @@ namespace DataApp.Winforms
         private void buttonDetailsDelete_Click(object sender, EventArgs e)
         {
             DeleteObject();
-            //LoadDataToGrid();
+            LoadDataToGrid();
 
         }
 
@@ -262,7 +261,7 @@ namespace DataApp.Winforms
         private void buttonDetailsUpdate_Click(object sender, EventArgs e)
         {
             SaveDataToDB(true);
-            //LoadDataToGrid();
+            LoadDataToGrid();
         }
         #endregion
 

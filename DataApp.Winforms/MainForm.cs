@@ -145,21 +145,12 @@ namespace DataApp.Winforms
 
         }
 
-        private void companiesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //HideAllForm();
-            //DisplayCompaniesForm();
-            //WriteStatusBar();
-            MessageBox.Show("To be implemented.");
-
-        }
-
         private void checksToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //HideAllForm();
-            //DisplayChecksForm();
-            //WriteStatusBar();
-            MessageBox.Show("To be implemented.");
+            HideAllForm();
+            DisplayChecksForm();
+            WriteStatusBar();
+            //MessageBox.Show("To be implemented.");
         }
 
         public enum StatusBarCode

@@ -161,7 +161,7 @@
             // 
             this.numericUpDownId.Location = new System.Drawing.Point(76, 15);
             this.numericUpDownId.Maximum = new decimal(new int[] {
-            10000,
+            999999999,
             0,
             0,
             0});
@@ -202,7 +202,7 @@
             // 
             this.numericUpDownMaxRow.Location = new System.Drawing.Point(75, 41);
             this.numericUpDownMaxRow.Maximum = new decimal(new int[] {
-            10000,
+            999999999,
             0,
             0,
             0});
@@ -344,7 +344,7 @@
             this.numericUpDownDetailsID.Enabled = false;
             this.numericUpDownDetailsID.Location = new System.Drawing.Point(29, 19);
             this.numericUpDownDetailsID.Maximum = new decimal(new int[] {
-            10000,
+            999999999,
             0,
             0,
             0});
