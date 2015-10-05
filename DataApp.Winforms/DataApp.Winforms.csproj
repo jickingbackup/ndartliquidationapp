@@ -169,6 +169,51 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="images\settings-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\checks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Companies.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\delete-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\disconnected-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\edit-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\expense.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\ok-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\projects.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\records.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\reports.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\save-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\search-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\undo-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\user.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

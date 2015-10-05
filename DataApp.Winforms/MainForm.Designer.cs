@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.rEPORTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateUserDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,9 +40,6 @@
             this.expensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rEPORTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,14 +56,39 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // rEPORTSToolStripMenuItem
+            // 
+            this.rEPORTSToolStripMenuItem.Image = global::DataApp.Winforms.Properties.Resources.reports;
+            this.rEPORTSToolStripMenuItem.Name = "rEPORTSToolStripMenuItem";
+            this.rEPORTSToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.rEPORTSToolStripMenuItem.Text = "REPORTS";
+            this.rEPORTSToolStripMenuItem.Click += new System.EventHandler(this.rEPORTSToolStripMenuItem_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 479);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(624, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(27, 17);
+            this.toolStripStatusLabel1.Text = "----";
+            // 
             // userToolStripMenuItem
             // 
             this.userToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.updateUserDetailsToolStripMenuItem,
             this.manageUsersToolStripMenuItem,
             this.lognoutToolStripMenuItem});
+            this.userToolStripMenuItem.Image = global::DataApp.Winforms.Properties.Resources.settings_32;
             this.userToolStripMenuItem.Name = "userToolStripMenuItem";
-            this.userToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.userToolStripMenuItem.Text = "SETTINGS";
             // 
             // updateUserDetailsToolStripMenuItem
@@ -93,12 +118,14 @@
             this.expensesToolStripMenuItem,
             this.checksToolStripMenuItem,
             this.projectsToolStripMenuItem});
+            this.rECORDSToolStripMenuItem.Image = global::DataApp.Winforms.Properties.Resources.records;
             this.rECORDSToolStripMenuItem.Name = "rECORDSToolStripMenuItem";
-            this.rECORDSToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.rECORDSToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.rECORDSToolStripMenuItem.Text = "RECORDS";
             // 
             // expensesToolStripMenuItem
             // 
+            this.expensesToolStripMenuItem.Image = global::DataApp.Winforms.Properties.Resources.expense;
             this.expensesToolStripMenuItem.Name = "expensesToolStripMenuItem";
             this.expensesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.expensesToolStripMenuItem.Text = "Expenses";
@@ -106,6 +133,7 @@
             // 
             // checksToolStripMenuItem
             // 
+            this.checksToolStripMenuItem.Image = global::DataApp.Winforms.Properties.Resources.checks;
             this.checksToolStripMenuItem.Name = "checksToolStripMenuItem";
             this.checksToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.checksToolStripMenuItem.Text = "Checks";
@@ -113,33 +141,11 @@
             // 
             // projectsToolStripMenuItem
             // 
+            this.projectsToolStripMenuItem.Image = global::DataApp.Winforms.Properties.Resources.projects;
             this.projectsToolStripMenuItem.Name = "projectsToolStripMenuItem";
             this.projectsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.projectsToolStripMenuItem.Text = "Projects";
             this.projectsToolStripMenuItem.Click += new System.EventHandler(this.projectsToolStripMenuItem_Click);
-            // 
-            // rEPORTSToolStripMenuItem
-            // 
-            this.rEPORTSToolStripMenuItem.Name = "rEPORTSToolStripMenuItem";
-            this.rEPORTSToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.rEPORTSToolStripMenuItem.Text = "REPORTS";
-            this.rEPORTSToolStripMenuItem.Click += new System.EventHandler(this.rEPORTSToolStripMenuItem_Click);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 479);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(624, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(27, 17);
-            this.toolStripStatusLabel1.Text = "----";
             // 
             // MainForm
             // 
