@@ -1,5 +1,6 @@
 ﻿using DataApp.Core;
 using DataApp.Core.Models;
+using DataApp.Winforms.ViewModels;
 using DataApp.Winforms.ViewModels.DataGridViewModels;
 using System;
 using System.Collections.Generic;
@@ -31,13 +32,47 @@ namespace DataApp.Winforms
 
         #region CUSTOM CODE
 
+        private void InitializeComboboxes()
+        {
+            comboBoxDetailsProject.ValueMember = "Id";
+            comboBoxDetailsProject.DisplayMember = "Name";
+            comboBoxDetailsProject.DataSource = db.ProjectController.Get().ToList();
+
+            List<CheckComboboxViewModel> checkComboData = new List<CheckComboboxViewModel>();
+
+            foreach (var i in db.CheckController.Get())
+            {
+                checkComboData.Add(new CheckComboboxViewModel(i));
+            }
+
+            comboBoxDetailsCheck.ValueMember = "Id";
+            comboBoxDetailsCheck.DisplayMember = "Name";
+            comboBoxDetailsCheck.DataSource = checkComboData;
+
+            List<string> categories = new List<string>() {            
+                "Communication",
+            "Representation",
+            "Transportation",
+            "Fuel",
+            "OfficeSupplies",
+            "OfficeEquipments",
+            "Rental",
+            "ManPower",
+            "Materials",
+            "CashAdvance",
+            "Commission",
+            "ToolsAndEquipments",
+            "MISC" };
+            comboBoxDetailsCategory.DataSource = categories;
+        }
+
         #region SEARCH
         void LoadDataToGrid(string message = null)
         {
             //TODO: check filters
             int projectID = Convert.ToInt32(numericUpDownId.Value);
             bool includeHiddenProjects = checkBoxIncludeHidden.Checked;
-            string projectName = textBoxFilterName.Text;
+            //string projectName = textBoxFilterName.Text;
 
 
             var rawDataList = db.ExpenseController.Get().ToList();
@@ -47,11 +82,11 @@ namespace DataApp.Winforms
                 rawDataList = rawDataList.Where(x => x.Id == projectID).ToList();
             }
 
-            if (String.IsNullOrEmpty(projectName) == false)
-            {
-                projectName = projectName.ToLower();
-                rawDataList = rawDataList.Where(x => x.ORNUmber.ToLower() == projectName).ToList();
-            }
+            //if (String.IsNullOrEmpty(projectName) == false)
+            //{
+            //    projectName = projectName.ToLower();
+            //    rawDataList = rawDataList.Where(x => x.ORNUmber.ToLower() == projectName).ToList();
+            //}
 
             if (includeHiddenProjects == false)
             {
@@ -77,9 +112,8 @@ namespace DataApp.Winforms
 
         void ResetSearchFilters()
         {
-            this.textBoxFilterName.Text = "";
+            //this.textBoxFilterName.Text = "";
             this.numericUpDownId.Value = 0;
-            this.numericUpDownMaxRow.Value = 100;
             this.checkBoxIncludeHidden.Checked = false;
 
 
@@ -94,7 +128,7 @@ namespace DataApp.Winforms
             textBoxDetailsDescription.Text = "";
             numericUpDownDetailsID.Value = 0;
             textBoxDetailsDescription.Text = "";
-            textBoxDetailsName.Text = "";
+            textBoxDetailsORNumber.Text = "";
 
             currentExpense = new Expense();
 
@@ -108,14 +142,21 @@ namespace DataApp.Winforms
             if (currentExpense != null)
             {
                 numericUpDownDetailsID.Value = currentExpense.Id;
-                textBoxDetailsName.Text = currentExpense.ORNUmber;
+                textBoxDetailsORNumber.Text = currentExpense.ORNUmber;
+                textBoxDetailsDescription.Text = currentExpense.Description;
+                textBoxDetailsCompany.Text = currentExpense.CompanyName;
+                numericUpDownDetailsAmount.Value = currentExpense.Amount;
+                dateTimePickerDetailsDate.Value = currentExpense.Date;
+                comboBoxDetailsProject.SelectedValue = currentExpense.ProjectId;
+                comboBoxDetailsCheck.SelectedValue = currentExpense.CheckId;
+                comboBoxDetailsCategory.SelectedItem = currentExpense.ExpenseCategory.ToString();
             }
         }
 
         void MapControlsToObject()
         {
             currentExpense.Id = Convert.ToInt32(numericUpDownDetailsID.Value);
-            currentExpense.ORNUmber = textBoxDetailsName.Text;
+            currentExpense.ORNUmber = textBoxDetailsORNumber.Text;
         }
 
 
@@ -223,6 +264,7 @@ namespace DataApp.Winforms
         #region SEARCH
         private void ProjectsForm_Load(object sender, EventArgs e)
         {
+            InitializeComboboxes();
             LoadDataToGrid();
         }
 

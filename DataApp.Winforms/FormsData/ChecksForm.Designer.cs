@@ -39,8 +39,6 @@
             this.numericUpDownId = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonClearFilters = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDownMaxRow = new System.Windows.Forms.NumericUpDown();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxFilterName = new System.Windows.Forms.TextBox();
@@ -65,7 +63,6 @@
             this.contextMenuStripGridView.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxRow)).BeginInit();
             this.tabPageDetails.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -136,8 +133,6 @@
             this.groupBox2.Controls.Add(this.numericUpDownId);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.buttonClearFilters);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.numericUpDownMaxRow);
             this.groupBox2.Controls.Add(this.buttonSearch);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.textBoxFilterName);
@@ -189,37 +184,6 @@
             this.buttonClearFilters.Text = "Reset";
             this.buttonClearFilters.UseVisualStyleBackColor = true;
             this.buttonClearFilters.Click += new System.EventHandler(this.buttonDetailsReset_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Max Rows :";
-            // 
-            // numericUpDownMaxRow
-            // 
-            this.numericUpDownMaxRow.Location = new System.Drawing.Point(75, 41);
-            this.numericUpDownMaxRow.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.numericUpDownMaxRow.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownMaxRow.Name = "numericUpDownMaxRow";
-            this.numericUpDownMaxRow.Size = new System.Drawing.Size(80, 20);
-            this.numericUpDownMaxRow.TabIndex = 7;
-            this.numericUpDownMaxRow.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
             // 
             // buttonSearch
             // 
@@ -433,7 +397,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxRow)).EndInit();
             this.tabPageDetails.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -454,8 +417,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDownId;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonClearFilters;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDownMaxRow;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxFilterName;

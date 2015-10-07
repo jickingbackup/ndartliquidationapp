@@ -80,7 +80,6 @@ namespace DataApp.Winforms
         {
             this.textBoxFilterName.Text = "";
             this.numericUpDownId.Value = 0;
-            this.numericUpDownMaxRow.Value = 100;
             this.checkBoxIncludeHidden.Checked = false;
 
             

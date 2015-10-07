@@ -29,6 +29,7 @@ namespace DataApp.Winforms
         ProjectsForm projectForm = null;
         ExpensesForm expensesForm = null;
         ChecksForm checksForm = null;
+        ExpenseReportsForm reportsForm = null;
 
         public MainForm()
         {
@@ -91,6 +92,15 @@ namespace DataApp.Winforms
             checksForm.Show();
         }
 
+        void DisplayReportsForm()
+        {
+            if (reportsForm == null || reportsForm.IsDisposed)
+            {
+                this.reportsForm = FormFactory.CreateExpenseReportsForm(this);
+                reportsForm.MdiParent = this;
+            }
+            reportsForm.Show();
+        }
 
         void HideAllForm()
         {
@@ -168,9 +178,11 @@ namespace DataApp.Winforms
             MessageBox.Show("To be implemented.");
         }
 
-        private void rEPORTSToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ReportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            HideAllForm();
+            DisplayReportsForm();
+            WriteStatusBar();
         }
     }
 }

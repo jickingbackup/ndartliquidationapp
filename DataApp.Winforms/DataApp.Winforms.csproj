@@ -48,8 +48,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -102,15 +105,21 @@
       <DependentUpon>ProjectsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\CheckComboboxViewModel.cs" />
     <Compile Include="ViewModels\DataGridViewModels\CheckViewModel.cs" />
     <Compile Include="ViewModels\DataGridViewModels\ExpenseViewModel.cs" />
     <Compile Include="ViewModels\DataGridViewModels\ProjectViewModel.cs" />
+    <Compile Include="ViewModels\ExpenseReportViewModel.cs" />
     <EmbeddedResource Include="FormsData\ChecksForm.resx">
       <DependentUpon>ChecksForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsData\ExpensesForm.resx">
       <DependentUpon>ExpensesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormsReports\ExpenseReportsForm.resx">
+      <DependentUpon>ExpenseReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsReports\Report1.rdlc" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +139,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\DataApp.Winforms.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\DataApp.Winforms.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\ExpenseReportViewModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -143,9 +155,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\DataApp.Core\DataApp.Core.csproj">
       <Project>{7b1e5fec-a36b-43b3-b7ce-a5e159a8f647}</Project>

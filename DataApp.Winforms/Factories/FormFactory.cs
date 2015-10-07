@@ -69,14 +69,14 @@ namespace DataApp.Winforms
 
         public static ExpenseReportsForm CreateExpenseReportsForm(MainForm form)
         {
-            return new ExpenseReportsForm()
+            return new ExpenseReportsForm(form)
             {
                 StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen,
                 ShowInTaskbar = false,
                 ShowIcon = false,
                 ControlBox = false,
                 WindowState = System.Windows.Forms.FormWindowState.Maximized,
-                Text = "COMPANIES"
+                Text = "Reports"
             };
         }
 
