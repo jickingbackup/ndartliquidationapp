@@ -101,12 +101,12 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ContextMenuStrip = this.contextMenuStripGridView;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 135);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 80);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(602, 212);
+            this.dataGridView1.Size = new System.Drawing.Size(602, 267);
             this.dataGridView1.StandardTab = true;
             this.dataGridView1.TabIndex = 6;
             // 
@@ -137,7 +137,7 @@
             this.groupBox2.Controls.Add(this.textBoxFilterName);
             this.groupBox2.Location = new System.Drawing.Point(8, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(602, 126);
+            this.groupBox2.Size = new System.Drawing.Size(602, 71);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filters";
@@ -145,7 +145,7 @@
             // checkBoxIncludeHidden
             // 
             this.checkBoxIncludeHidden.AutoSize = true;
-            this.checkBoxIncludeHidden.Location = new System.Drawing.Point(9, 97);
+            this.checkBoxIncludeHidden.Location = new System.Drawing.Point(9, 47);
             this.checkBoxIncludeHidden.Name = "checkBoxIncludeHidden";
             this.checkBoxIncludeHidden.Size = new System.Drawing.Size(98, 17);
             this.checkBoxIncludeHidden.TabIndex = 13;
@@ -175,8 +175,7 @@
             // 
             // buttonSearchClearFilters
             // 
-            this.buttonSearchClearFilters.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSearchClearFilters.Location = new System.Drawing.Point(522, 97);
+            this.buttonSearchClearFilters.Location = new System.Drawing.Point(521, 41);
             this.buttonSearchClearFilters.Name = "buttonSearchClearFilters";
             this.buttonSearchClearFilters.Size = new System.Drawing.Size(75, 23);
             this.buttonSearchClearFilters.TabIndex = 9;
@@ -186,8 +185,7 @@
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSearch.Location = new System.Drawing.Point(441, 97);
+            this.buttonSearch.Location = new System.Drawing.Point(440, 41);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(75, 23);
             this.buttonSearch.TabIndex = 6;
@@ -198,19 +196,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(162, 18);
+            this.label1.Location = new System.Drawing.Point(173, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Name :";
+            this.label1.Text = "Keyword :";
             // 
             // textBoxFilterName
             // 
-            this.textBoxFilterName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxFilterName.Location = new System.Drawing.Point(209, 15);
+            this.textBoxFilterName.Location = new System.Drawing.Point(233, 15);
             this.textBoxFilterName.Name = "textBoxFilterName";
-            this.textBoxFilterName.Size = new System.Drawing.Size(387, 20);
+            this.textBoxFilterName.Size = new System.Drawing.Size(363, 20);
             this.textBoxFilterName.TabIndex = 4;
             // 
             // tabPageDetails
@@ -242,7 +238,6 @@
             // 
             // buttonDetailsUpdate
             // 
-            this.buttonDetailsUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonDetailsUpdate.Location = new System.Drawing.Point(289, 51);
             this.buttonDetailsUpdate.Name = "buttonDetailsUpdate";
             this.buttonDetailsUpdate.Size = new System.Drawing.Size(109, 23);
@@ -253,7 +248,6 @@
             // 
             // buttonDetailsDelete
             // 
-            this.buttonDetailsDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonDetailsDelete.Location = new System.Drawing.Point(9, 51);
             this.buttonDetailsDelete.Name = "buttonDetailsDelete";
             this.buttonDetailsDelete.Size = new System.Drawing.Size(75, 23);
@@ -264,7 +258,6 @@
             // 
             // buttonDetailsAdd
             // 
-            this.buttonDetailsAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonDetailsAdd.Location = new System.Drawing.Point(404, 51);
             this.buttonDetailsAdd.Name = "buttonDetailsAdd";
             this.buttonDetailsAdd.Size = new System.Drawing.Size(109, 23);
@@ -275,7 +268,6 @@
             // 
             // buttonDetailsReset
             // 
-            this.buttonDetailsReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonDetailsReset.Location = new System.Drawing.Point(519, 51);
             this.buttonDetailsReset.Name = "buttonDetailsReset";
             this.buttonDetailsReset.Size = new System.Drawing.Size(75, 23);
@@ -381,6 +373,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Projects";
+            this.Activated += new System.EventHandler(this.ProjectsForm_Activated);
             this.Load += new System.EventHandler(this.ProjectsForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPageSearch.ResumeLayout(false);

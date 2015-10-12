@@ -102,12 +102,12 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ContextMenuStrip = this.contextMenuStripGridView;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 135);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 86);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(586, 173);
+            this.dataGridView1.Size = new System.Drawing.Size(586, 222);
             this.dataGridView1.StandardTab = true;
             this.dataGridView1.TabIndex = 6;
             // 
@@ -138,7 +138,7 @@
             this.groupBox2.Controls.Add(this.textBoxFilterName);
             this.groupBox2.Location = new System.Drawing.Point(8, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(586, 126);
+            this.groupBox2.Size = new System.Drawing.Size(586, 77);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filters";
@@ -146,7 +146,7 @@
             // checkBoxIncludeHidden
             // 
             this.checkBoxIncludeHidden.AutoSize = true;
-            this.checkBoxIncludeHidden.Location = new System.Drawing.Point(9, 97);
+            this.checkBoxIncludeHidden.Location = new System.Drawing.Point(9, 47);
             this.checkBoxIncludeHidden.Name = "checkBoxIncludeHidden";
             this.checkBoxIncludeHidden.Size = new System.Drawing.Size(98, 17);
             this.checkBoxIncludeHidden.TabIndex = 13;
@@ -176,8 +176,7 @@
             // 
             // buttonClearFilters
             // 
-            this.buttonClearFilters.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonClearFilters.Location = new System.Drawing.Point(506, 97);
+            this.buttonClearFilters.Location = new System.Drawing.Point(505, 41);
             this.buttonClearFilters.Name = "buttonClearFilters";
             this.buttonClearFilters.Size = new System.Drawing.Size(75, 23);
             this.buttonClearFilters.TabIndex = 9;
@@ -187,8 +186,7 @@
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSearch.Location = new System.Drawing.Point(425, 97);
+            this.buttonSearch.Location = new System.Drawing.Point(424, 41);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(75, 23);
             this.buttonSearch.TabIndex = 6;
@@ -199,16 +197,14 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(162, 18);
+            this.label1.Location = new System.Drawing.Point(201, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Voucher Number :";
+            this.label1.Text = "Keyword :";
             // 
             // textBoxFilterName
             // 
-            this.textBoxFilterName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxFilterName.Location = new System.Drawing.Point(261, 15);
             this.textBoxFilterName.Name = "textBoxFilterName";
             this.textBoxFilterName.Size = new System.Drawing.Size(319, 20);

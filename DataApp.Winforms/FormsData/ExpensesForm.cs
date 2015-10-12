@@ -72,7 +72,7 @@ namespace DataApp.Winforms
             //TODO: check filters
             int projectID = Convert.ToInt32(numericUpDownId.Value);
             bool includeHiddenProjects = checkBoxIncludeHidden.Checked;
-            //string projectName = textBoxFilterName.Text;
+            string keyword = textBoxFilterName.Text;
 
 
             var rawDataList = db.ExpenseController.Get().ToList();
@@ -82,11 +82,20 @@ namespace DataApp.Winforms
                 rawDataList = rawDataList.Where(x => x.Id == projectID).ToList();
             }
 
-            //if (String.IsNullOrEmpty(projectName) == false)
-            //{
-            //    projectName = projectName.ToLower();
-            //    rawDataList = rawDataList.Where(x => x.ORNUmber.ToLower() == projectName).ToList();
-            //}
+            if (String.IsNullOrEmpty(keyword) == false)
+            {
+                keyword = keyword.ToLower();
+                rawDataList = rawDataList.Where(x =>
+                    x.ORNUmber.ToLower().Contains(keyword)
+                    || x.CompanyName.ToLower().Contains(keyword)
+                    || x.Date.ToShortDateString().ToLower().Contains(keyword)
+                    || x.Description.ToLower().Contains(keyword)
+                    || x.ExpenseCategory.ToString().ToLower().Contains(keyword)
+                    || x.Amount.ToString().ToLower().Contains(keyword)
+                    || x.Project.Name.ToString().ToLower().Contains(keyword)
+                    || x.Check.VoucherNumber.ToString().ToLower().Contains(keyword)
+                    ).ToList();
+            }
 
             if (includeHiddenProjects == false)
             {
@@ -112,11 +121,9 @@ namespace DataApp.Winforms
 
         void ResetSearchFilters()
         {
-            //this.textBoxFilterName.Text = "";
+            this.textBoxFilterName.Text = "";
             this.numericUpDownId.Value = 0;
             this.checkBoxIncludeHidden.Checked = false;
-
-
         }
 
         #endregion

@@ -37,7 +37,7 @@ namespace DataApp.Winforms
             //TODO: check filters
             int checkID = Convert.ToInt32(numericUpDownId.Value);
             bool includeHiddenChecks = checkBoxIncludeHidden.Checked;
-            string voucher = textBoxFilterName.Text;
+            string filter = textBoxFilterName.Text;
 
 
             var rawDataList = db.CheckController.Get().ToList();
@@ -47,10 +47,14 @@ namespace DataApp.Winforms
                 rawDataList = rawDataList.Where(x => x.Id == checkID).ToList();
             }
 
-            if (String.IsNullOrEmpty(voucher) == false)
+            if (String.IsNullOrEmpty(filter) == false)
             {
-                voucher = voucher.ToLower();
-                rawDataList = rawDataList.Where(x => x.VoucherNumber.ToLower() == voucher).ToList();
+                filter = filter.ToLower();
+                rawDataList = rawDataList.Where(x => 
+                    x.VoucherNumber.ToLower().Contains(filter)
+                    || x.Amount.ToString().ToLower().Contains(filter)
+                    || x.IssueDate.ToShortDateString().ToLower().Contains(filter)
+                    ).ToList();
             }
 
             if (includeHiddenChecks == false)
@@ -89,6 +93,8 @@ namespace DataApp.Winforms
 
         void ResetDetailsPane()
         {
+            this.textBoxFilterName.Text = "";
+
             //textBoxDetailsDescription.Text = "";
             //numericUpDownDetailsID.Value = 0;
             //textBoxDetailsDescription.Text = "";

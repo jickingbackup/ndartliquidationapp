@@ -35,17 +35,12 @@
             this.contextMenuStripGridView = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemEditRow = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label13 = new System.Windows.Forms.Label();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.buttonSearchClearFilters = new System.Windows.Forms.Button();
             this.checkBoxIncludeHidden = new System.Windows.Forms.CheckBox();
             this.numericUpDownId = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.buttonSearchClearFilters = new System.Windows.Forms.Button();
-            this.buttonSearch = new System.Windows.Forms.Button();
             this.tabPageDetails = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.buttonDetailsUpdate = new System.Windows.Forms.Button();
@@ -71,6 +66,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxDetailsORNumber = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.textBoxFilterName = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPageSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -143,14 +139,10 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.textBoxFilterName);
             this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.buttonSearch);
-            this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.buttonSearchClearFilters);
-            this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.checkBoxIncludeHidden);
             this.groupBox2.Controls.Add(this.numericUpDownId);
             this.groupBox2.Controls.Add(this.label3);
@@ -161,56 +153,34 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filters";
             // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(196, 14);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(153, 21);
-            this.comboBox2.TabIndex = 24;
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(133, 17);
+            this.label16.Location = new System.Drawing.Point(171, 17);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(46, 13);
+            this.label16.Size = new System.Drawing.Size(54, 13);
             this.label16.TabIndex = 23;
-            this.label16.Text = "Project :";
+            this.label16.Text = "Keyword :";
             // 
-            // comboBox1
+            // buttonSearch
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(196, 41);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(153, 21);
-            this.comboBox1.TabIndex = 21;
+            this.buttonSearch.Location = new System.Drawing.Point(441, 39);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonSearch.TabIndex = 6;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
-            // label15
+            // buttonSearchClearFilters
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(133, 44);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(44, 13);
-            this.label15.TabIndex = 20;
-            this.label15.Text = "Check :";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(441, 15);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(153, 20);
-            this.dateTimePicker1.TabIndex = 18;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(378, 17);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(36, 13);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "Date :";
+            this.buttonSearchClearFilters.Location = new System.Drawing.Point(519, 39);
+            this.buttonSearchClearFilters.Name = "buttonSearchClearFilters";
+            this.buttonSearchClearFilters.Size = new System.Drawing.Size(75, 23);
+            this.buttonSearchClearFilters.TabIndex = 9;
+            this.buttonSearchClearFilters.Text = "Reset";
+            this.buttonSearchClearFilters.UseVisualStyleBackColor = true;
+            this.buttonSearchClearFilters.Click += new System.EventHandler(this.buttonClearFilters_Click);
             // 
             // checkBoxIncludeHidden
             // 
@@ -243,28 +213,6 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Id :";
             // 
-            // buttonSearchClearFilters
-            // 
-            this.buttonSearchClearFilters.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSearchClearFilters.Location = new System.Drawing.Point(519, 39);
-            this.buttonSearchClearFilters.Name = "buttonSearchClearFilters";
-            this.buttonSearchClearFilters.Size = new System.Drawing.Size(75, 23);
-            this.buttonSearchClearFilters.TabIndex = 9;
-            this.buttonSearchClearFilters.Text = "Reset";
-            this.buttonSearchClearFilters.UseVisualStyleBackColor = true;
-            this.buttonSearchClearFilters.Click += new System.EventHandler(this.buttonClearFilters_Click);
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSearch.Location = new System.Drawing.Point(441, 39);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
-            this.buttonSearch.TabIndex = 6;
-            this.buttonSearch.Text = "Search";
-            this.buttonSearch.UseVisualStyleBackColor = true;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
-            // 
             // tabPageDetails
             // 
             this.tabPageDetails.Controls.Add(this.groupBox3);
@@ -279,8 +227,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.buttonDetailsUpdate);
             this.groupBox3.Controls.Add(this.buttonDetailsDelete);
             this.groupBox3.Controls.Add(this.buttonDetailsAdd);
@@ -334,9 +280,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dateTimePickerDetailsDate);
             this.groupBox1.Controls.Add(this.comboBoxDetailsCategory);
             this.groupBox1.Controls.Add(this.comboBoxDetailsCheck);
@@ -522,6 +465,13 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "OR # :";
             // 
+            // textBoxFilterName
+            // 
+            this.textBoxFilterName.Location = new System.Drawing.Point(231, 13);
+            this.textBoxFilterName.Name = "textBoxFilterName";
+            this.textBoxFilterName.Size = new System.Drawing.Size(363, 20);
+            this.textBoxFilterName.TabIndex = 24;
+            // 
             // ExpensesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -586,11 +536,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerDetailsDate;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripGridView;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEditRow;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox textBoxFilterName;
     }
 }

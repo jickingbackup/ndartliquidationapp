@@ -26,6 +26,13 @@ namespace DataApp.Core.Controlers
                 {
                     expense.Check = this.db.GetCollection<Check>("checks").FindById(expense.CheckId);
                     expense.Project = this.db.GetCollection<Project>("projects").FindById(expense.ProjectId);
+                    //set empty string when null. legacy data support sucks.
+                    if (expense.CompanyName == null)
+                        expense.CompanyName = "";
+                    if (expense.Description == null)
+                        expense.Description = "";
+                    if (expense.ORNUmber == null)
+                        expense.ORNUmber = "";
                 }
 
                 return expenses;

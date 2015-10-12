@@ -38,8 +38,7 @@ namespace DataApp.Winforms
             //TODO: check filters
             int projectID = Convert.ToInt32(numericUpDownId.Value);
             bool includeHiddenProjects = checkBoxIncludeHidden.Checked;
-            string projectName = textBoxFilterName.Text;
-
+            string keyword = textBoxFilterName.Text;
 
             var rawDataList = db.ProjectController.Get().ToList();
 
@@ -48,10 +47,12 @@ namespace DataApp.Winforms
                 rawDataList = rawDataList.Where(x => x.Id == projectID).ToList();
             }
 
-            if (String.IsNullOrEmpty(projectName) == false)
+            if (String.IsNullOrEmpty(keyword) == false)
             {
-                projectName = projectName.ToLower();
-                rawDataList = rawDataList.Where(x => x.Name.ToLower() == projectName).ToList();
+                keyword = keyword.ToLower();
+                rawDataList = rawDataList.Where(x => 
+                    x.Name.ToLower().Contains(keyword)
+                    ).ToList();
             }
 
             if (includeHiddenProjects == false)
@@ -275,6 +276,12 @@ namespace DataApp.Winforms
             EditSelectedObject();
         }
         #endregion
+
+
+        private void ProjectsForm_Activated(object sender, EventArgs e)
+        {
+            LoadDataToGrid();
+        }
 
     }
 }
