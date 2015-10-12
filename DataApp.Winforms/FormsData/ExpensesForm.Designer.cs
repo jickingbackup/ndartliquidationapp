@@ -35,6 +35,7 @@
             this.contextMenuStripGridView = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemEditRow = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBoxFilterName = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonSearchClearFilters = new System.Windows.Forms.Button();
@@ -66,7 +67,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxDetailsORNumber = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBoxFilterName = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPageSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -152,6 +152,13 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filters";
+            // 
+            // textBoxFilterName
+            // 
+            this.textBoxFilterName.Location = new System.Drawing.Point(231, 13);
+            this.textBoxFilterName.Name = "textBoxFilterName";
+            this.textBoxFilterName.Size = new System.Drawing.Size(363, 20);
+            this.textBoxFilterName.TabIndex = 24;
             // 
             // label16
             // 
@@ -465,13 +472,6 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "OR # :";
             // 
-            // textBoxFilterName
-            // 
-            this.textBoxFilterName.Location = new System.Drawing.Point(231, 13);
-            this.textBoxFilterName.Name = "textBoxFilterName";
-            this.textBoxFilterName.Size = new System.Drawing.Size(363, 20);
-            this.textBoxFilterName.TabIndex = 24;
-            // 
             // ExpensesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,6 +480,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "ExpensesForm";
             this.Text = "ExpensesForm";
+            this.Activated += new System.EventHandler(this.ExpensesForm_Activated);
             this.Load += new System.EventHandler(this.ProjectsForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPageSearch.ResumeLayout(false);

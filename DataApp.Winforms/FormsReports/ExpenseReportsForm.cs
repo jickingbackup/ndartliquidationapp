@@ -32,17 +32,47 @@ namespace DataApp.Winforms
 
         void LoadData()
         {
+            long maxRows = 0;
+            long counter = 0;
             var expenses = new List<ExpenseReportViewModel>();
+            var rawExpenses = this.db.ExpenseController.Get();
 
-            foreach (var item in this.db.ExpenseController.Get())
+            ExpenseReportViewModelBindingSource.Clear();
+            long.TryParse(numericUpDownMaxRows.Value.ToString(), out maxRows);
+            //filter here.
+
+
+            foreach (var item in rawExpenses)
             {
+                if (counter >= maxRows)
+                    break;
                 expenses.Add(new ExpenseReportViewModel(item));
+                counter++;
             }
 
             foreach (var item in expenses)
             {
                 ExpenseReportViewModelBindingSource.Add(item);
             }
+
+            reportViewer1.RefreshReport();
         }
+
+        private void InitializeComboboxes()
+        {
+            //throw new NotImplementedException();
+        }
+
+        private void ExpenseReportsForm_Activated(object sender, EventArgs e)
+        {
+            InitializeComboboxes();
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+
     }
 }

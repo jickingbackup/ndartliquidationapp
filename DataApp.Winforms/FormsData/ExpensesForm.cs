@@ -323,5 +323,10 @@ namespace DataApp.Winforms
             EditSelectedObject();
         }
         #endregion
+
+        private void ExpensesForm_Activated(object sender, EventArgs e)
+        {
+            InitializeComboboxes();
+        }
     }
 }
