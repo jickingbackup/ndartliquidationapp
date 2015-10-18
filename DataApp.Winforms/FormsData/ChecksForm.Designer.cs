@@ -80,6 +80,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(608, 342);
             this.tabControl1.TabIndex = 4;
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // tabPageSearch
             // 

@@ -52,14 +52,14 @@ namespace DataApp.Winforms
 
         private void DisplayLoginForm()
         {
-            if (currentUser == null)
-            {
-                using (var loginForm = FormFactory.CreateLoginForm(this))
-                {
-                    this.Hide();
-                    loginForm.ShowDialog();
-                }
-            }
+            //if (currentUser == null)
+            //{
+            //    using (var loginForm = FormFactory.CreateLoginForm(this))
+            //    {
+            //        this.Hide();
+            //        loginForm.ShowDialog();
+            //    }
+            //}
         }
 
         void DisplayProjectsForm()

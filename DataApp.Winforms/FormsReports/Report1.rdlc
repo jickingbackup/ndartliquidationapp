@@ -178,7 +178,21 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ammount(PHP)</Value>
+                              <Value>Ammount</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -602,60 +616,6 @@
   </Body>
   <Width>6.5in</Width>
   <Page>
-    <PageHeader>
-      <Height>0.42583in</Height>
-      <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
-      <ReportItems>
-        <Textbox Name="Textbox4">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>TEST REPORT</Value>
-                  <Style>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox4</rd:DefaultName>
-          <Top>0.14805in</Top>
-          <Height>0.25in</Height>
-          <Width>5in</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-      </ReportItems>
-      <Style>
-        <Border>
-          <Style>None</Style>
-        </Border>
-        <TopBorder>
-          <Color>Black</Color>
-          <Style>Solid</Style>
-          <Width>1pt</Width>
-        </TopBorder>
-        <BottomBorder>
-          <Color>Black</Color>
-          <Style>Solid</Style>
-          <Width>1pt</Width>
-        </BottomBorder>
-      </Style>
-    </PageHeader>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
     <TopMargin>1in</TopMargin>

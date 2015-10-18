@@ -33,9 +33,9 @@
             this.updateUserDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lognoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.expensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.expensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -67,6 +67,7 @@
             this.userToolStripMenuItem.Name = "userToolStripMenuItem";
             this.userToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.userToolStripMenuItem.Text = "SETTINGS";
+            this.userToolStripMenuItem.Visible = false;
             // 
             // updateUserDetailsToolStripMenuItem
             // 
@@ -89,13 +90,13 @@
             this.lognoutToolStripMenuItem.Text = "Logout";
             this.lognoutToolStripMenuItem.Click += new System.EventHandler(this.lognoutToolStripMenuItem_Click);
             // 
-            // expensesToolStripMenuItem
+            // projectsToolStripMenuItem
             // 
-            this.expensesToolStripMenuItem.Image = global::DataApp.Winforms.Properties.Resources.expense;
-            this.expensesToolStripMenuItem.Name = "expensesToolStripMenuItem";
-            this.expensesToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
-            this.expensesToolStripMenuItem.Text = "Expenses";
-            this.expensesToolStripMenuItem.Click += new System.EventHandler(this.expensesToolStripMenuItem_Click);
+            this.projectsToolStripMenuItem.Image = global::DataApp.Winforms.Properties.Resources.projects;
+            this.projectsToolStripMenuItem.Name = "projectsToolStripMenuItem";
+            this.projectsToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.projectsToolStripMenuItem.Text = "Projects";
+            this.projectsToolStripMenuItem.Click += new System.EventHandler(this.projectsToolStripMenuItem_Click);
             // 
             // checksToolStripMenuItem
             // 
@@ -105,13 +106,13 @@
             this.checksToolStripMenuItem.Text = "Checks";
             this.checksToolStripMenuItem.Click += new System.EventHandler(this.checksToolStripMenuItem_Click);
             // 
-            // projectsToolStripMenuItem
+            // expensesToolStripMenuItem
             // 
-            this.projectsToolStripMenuItem.Image = global::DataApp.Winforms.Properties.Resources.projects;
-            this.projectsToolStripMenuItem.Name = "projectsToolStripMenuItem";
-            this.projectsToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
-            this.projectsToolStripMenuItem.Text = "Projects";
-            this.projectsToolStripMenuItem.Click += new System.EventHandler(this.projectsToolStripMenuItem_Click);
+            this.expensesToolStripMenuItem.Image = global::DataApp.Winforms.Properties.Resources.expense;
+            this.expensesToolStripMenuItem.Name = "expensesToolStripMenuItem";
+            this.expensesToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.expensesToolStripMenuItem.Text = "Expenses";
+            this.expensesToolStripMenuItem.Click += new System.EventHandler(this.expensesToolStripMenuItem_Click);
             // 
             // ReportsToolStripMenuItem
             // 

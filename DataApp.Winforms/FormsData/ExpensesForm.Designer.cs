@@ -90,6 +90,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(624, 381);
             this.tabControl1.TabIndex = 4;
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // tabPageSearch
             // 
@@ -234,6 +235,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.buttonDetailsUpdate);
             this.groupBox3.Controls.Add(this.buttonDetailsDelete);
             this.groupBox3.Controls.Add(this.buttonDetailsAdd);
@@ -254,6 +256,7 @@
             this.buttonDetailsUpdate.TabIndex = 13;
             this.buttonDetailsUpdate.Text = "Update";
             this.buttonDetailsUpdate.UseVisualStyleBackColor = true;
+            this.buttonDetailsUpdate.Click += new System.EventHandler(this.buttonDetailsUpdate_Click);
             // 
             // buttonDetailsDelete
             // 
@@ -264,6 +267,7 @@
             this.buttonDetailsDelete.TabIndex = 12;
             this.buttonDetailsDelete.Text = "Delete";
             this.buttonDetailsDelete.UseVisualStyleBackColor = true;
+            this.buttonDetailsDelete.Click += new System.EventHandler(this.buttonDetailsDelete_Click);
             // 
             // buttonDetailsAdd
             // 
@@ -274,6 +278,7 @@
             this.buttonDetailsAdd.TabIndex = 11;
             this.buttonDetailsAdd.Text = "Add";
             this.buttonDetailsAdd.UseVisualStyleBackColor = true;
+            this.buttonDetailsAdd.Click += new System.EventHandler(this.buttonDetailsSaveChanges_Click);
             // 
             // buttonDetailsReset
             // 
@@ -284,9 +289,11 @@
             this.buttonDetailsReset.TabIndex = 10;
             this.buttonDetailsReset.Text = "Reset";
             this.buttonDetailsReset.UseVisualStyleBackColor = true;
+            this.buttonDetailsReset.Click += new System.EventHandler(this.buttonDetailsReset_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dateTimePickerDetailsDate);
             this.groupBox1.Controls.Add(this.comboBoxDetailsCategory);
             this.groupBox1.Controls.Add(this.comboBoxDetailsCheck);

@@ -162,8 +162,17 @@ namespace DataApp.Winforms
 
         void MapControlsToObject()
         {
-            currentExpense.Id = Convert.ToInt32(numericUpDownDetailsID.Value);
+            currentExpense.Id = (int)numericUpDownDetailsID.Value;
             currentExpense.ORNUmber = textBoxDetailsORNumber.Text;
+            currentExpense.Description = textBoxDetailsDescription.Text;
+            currentExpense.CompanyName = textBoxDetailsCompany.Text;
+            currentExpense.Amount = numericUpDownDetailsAmount.Value;
+            currentExpense.Date = dateTimePickerDetailsDate.Value;
+            currentExpense.ProjectId = (int)comboBoxDetailsProject.SelectedValue;
+            currentExpense.CheckId = (int)comboBoxDetailsCheck.SelectedValue;
+            Expense.Category temp = Expense.Category.MISC;
+            Enum.TryParse<Expense.Category>(currentExpense.ExpenseCategory.ToString(),out temp);
+            currentExpense.ExpenseCategory = temp;
         }
 
 
@@ -282,6 +291,7 @@ namespace DataApp.Winforms
 
         private void buttonClearFilters_Click(object sender, EventArgs e)
         {
+            InitializeComboboxes();
             ResetSearchFilters();
         }
 
@@ -296,6 +306,7 @@ namespace DataApp.Winforms
 
         private void buttonDetailsReset_Click(object sender, EventArgs e)
         {
+            InitializeComboboxes();
             ResetDetailsPane();
         }
 
@@ -317,16 +328,17 @@ namespace DataApp.Winforms
         }
         #endregion
 
-
         private void contextMenuStrip1_Click(object sender, EventArgs e)
         {
             EditSelectedObject();
         }
-        #endregion
 
         private void ExpensesForm_Activated(object sender, EventArgs e)
         {
             InitializeComboboxes();
         }
+
+        #endregion
+
     }
 }
